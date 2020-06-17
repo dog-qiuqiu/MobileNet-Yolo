@@ -8,7 +8,7 @@ Network|VOC mAP(0.5)|Resolution|Inference Time(GTX2080ti)|Weight size
 ## Mobile inference frameworks benchmark(Lite:2.5Bflops!!!)
 Network|VOC mAP(0.5)|Resolution|Inference time (NCNN/Mate30)|Inference Time(MNN/Mate30)|Weight size
 :---:|:---:|:---:|:---:|:---:|:---:
-MobileNetV2-YOLOv3-Lite|65.1|320|33 ms|&ms|9.8MB
+[MobileNetV2-YOLOv3-Lite](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yolov3-mobilenetv2-lite_voc)|65.1|320|33 ms|&ms|9.8MB
 
 * Darknet Configuration: CUDA-version: 10010 (10020), cuDNN: 7.6.4,OpenCV version: 4.9.1
 * Darknet Packet convolution is not well supported on some GPUs such as gtx1080ti, and the inference time is 100ms
