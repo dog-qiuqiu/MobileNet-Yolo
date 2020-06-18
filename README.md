@@ -5,6 +5,7 @@ A darknet implementation of MobileNetv2-YOLOv3-SPP detection network
 Network|VOC mAP(0.5)|Resolution|Inference Time(GTX2080ti)|FLOPS|Weight size
 :---:|:---:|:---:|:---:|:---:|:---:
 MobileNetV2-YOLOv3-SPP|71.7|416|5ms|5.5BFlops|14.2
+*emmmm...这个懒得训练，mAP就凑合这样吧
 ## Mobile inference frameworks benchmark
 Network|VOC mAP(0.5)|COCO mAP(0.5)|Resolution|Inference time (NCNN/Mate30)|Inference Time(MNN/Mate30)|FLOPS|Weight size
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
