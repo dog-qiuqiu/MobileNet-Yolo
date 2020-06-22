@@ -8,7 +8,7 @@ MobileNetV2-YOLOv3-SPP|71.7|416|5ms|5.5BFlops|14.2
 
 *emmmm...这个懒得训练，mAP就凑合这样吧
 ## Mobile inference frameworks benchmark (4*ARM_CPU)
-Network|VOC mAP(0.5)|COCO mAP(0.5)|Resolution|Inference time (NCNN/Kirin 990)|Inference time (NNN arm82/Kirin 990)|FLOPS|Weight size
+Network|VOC mAP(0.5)|COCO mAP(0.5)|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|FLOPS|Weight size
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 MobileNetV2-YOLOv3-Lite|72.61|35.2|320|33 ms|18 ms|2.1BFlops|9.8MB
 MobileNetV2-YOLO-Tiny|61.17|30.4|304|26 ms|11 ms|1.5Flops|3.9MB
