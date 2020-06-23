@@ -5,7 +5,7 @@ A darknet implementation of MobileNetv2-YOLOv3-SPP detection network
 Network|VOC mAP(0.5)|Resolution|Inference Time(GTX2080ti)|FLOPS|Weight size
 :---:|:---:|:---:|:---:|:---:|:---:
 MobileNetV2-YOLOv3-SPP|71.7|416|5ms|5.5BFlops|14.2
-
+## ***Darknet Packet convolution is not well supported on some GPUs such as NVIDIA PASCAL!!! The MobileNetV2-YOLOv3-SPP	inference time is 100ms at GTX1080ti, but RTX2080 inference time is 5ms!!!***
 *emmmm...这个懒得训练，mAP就凑合这样吧
 ## Mobile inference frameworks benchmark (4*ARM_CPU)
 Network|VOC mAP(0.5)|COCO mAP(0.5)|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|FLOPS|Weight size
@@ -16,7 +16,7 @@ MobileNetV2-YOLO-Tiny|61.17|30.4|304|26 ms|11 ms|1.5Flops|3.9MB
 
 * Darknet Train Configuration: CUDA-version: 10010 (10020), cuDNN: 7.6.4,OpenCV version: 4 GPU:RTX2080ti
 * Support mobile inference frameworks such as NCNN&MNN
-## ***Darknet Packet convolution is not well supported on some GPUs such as NVIDIA PASCAL!!! The MobileNetV2-YOLOv3-SPP	inference time is 100ms at GTX1080ti, but RTX2080 inference time is 5ms!!!***
+
 ## MobileNetV2-YOLOv3-Lite-COCO Test results
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/predictions.jpg)
 
