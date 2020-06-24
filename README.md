@@ -20,7 +20,8 @@ MobileNetV2-YOLO-Tiny|61.17|30.4|304|26 ms|11 ms|1.5BFlops|3.9MB
 * nano明天提交VOC模型
 * Darknet Train Configuration: CUDA-version: 10010 (10020), cuDNN: 7.6.4,OpenCV version: 4 GPU:RTX2080ti
 * Support mobile inference frameworks such as NCNN&MNN
-
+## Reference&Framework instructions&How to Train
+https://github.com/AlexeyAB/darknet
 ## MobileNetV2-YOLOv3-Lite-COCO Test results
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/predictions.jpg)
 
@@ -32,5 +33,4 @@ MobileNetV2-YOLO-Tiny|61.17|30.4|304|26 ms|11 ms|1.5BFlops|3.9MB
 * 白嫖中....
 ## MNN conversion tutorial
 * 待完成
-## Reference&Framework instructions&How to Train
-https://github.com/AlexeyAB/darknet
+
