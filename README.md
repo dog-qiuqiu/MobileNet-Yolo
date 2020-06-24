@@ -37,6 +37,5 @@ MobileNetV2-YOLO-Tiny|61.17|30.4|304|26 ms|11 ms|1.5BFlops|3.9MB
 ## Thanks
 * https://github.com/shicai/MobileNet-Caffe
 * https://github.com/AlexeyAB/darknet
-* https://github.com/shicai/MobileNet-Caffe
 * https://github.com/Tencent/ncnn
 * https://gluon-cv.mxnet.io/
