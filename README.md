@@ -1,3 +1,9 @@
+## 待办
+* 完成Nano VOC&COCO模型的提交来替换掉Tiny模型
+* 提交改进后的lite模型
+* 对MobileNetV2-YOLOv3-SPP进行优化训练
+* 开放MNN模型转换脚本
+* 开放andooid示例项目
 ## MobileNetv2-YOLOv3-SPP Darknet 
 
 A darknet implementation of MobileNetv2-YOLOv3-SPP detection network
