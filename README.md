@@ -24,6 +24,10 @@ MobileNetV2-YOLO-Tiny|61.17|30.4|304|26 ms|11 ms|1.5BFlops|3.9MB
 * https://github.com/AlexeyAB/darknet
 * You must use a pre-trained model to train your own data set. You can make a pre-trained model based on the weights of COCO training in this project to initialize the network parameters
 * 交流qq群:1062122604
+## About model selection
+* MobileNetV2-YOLOv3-SPP:  Nvidia Jeston, Intel Movidius, TensorRT，NPU，OPENVINO...High-performance embedded side
+* MobileNetV2-YOLOv3-Lite: High Performance ARM-CPU，Qualcomm Adreno GPU， ARM82...High-performance mobile
+* MobileNetV2-YOLOv3-NANO： ARM-CPU...Computing resources are limited
 ## MobileNetV2-YOLOv3-Lite-COCO Test results
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/predictions.jpg)
 
