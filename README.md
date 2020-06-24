@@ -32,5 +32,5 @@ MobileNetV2-YOLO-Tiny|61.17|30.4|304|26 ms|11 ms|1.5BFlops|3.9MB
 * 白嫖中....
 ## MNN conversion tutorial
 * 待完成
-## Reference&Framework instructions
+## Reference&Framework instructions&How to Train
 https://github.com/AlexeyAB/darknet
