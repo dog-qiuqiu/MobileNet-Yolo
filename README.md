@@ -14,7 +14,8 @@ MobileNetV2-YOLOv3-SPP|71.7|416|5ms|5.5BFlops|14.2
 
 *emmmm...这个懒得训练，mAP就凑合这样吧
 ## ***Darknet Group convolution is not well supported on some GPUs such as NVIDIA PASCAL!!! The MobileNetV2-YOLOv3-SPP	inference time is 100ms at GTX1080ti, but RTX2080 inference time is 5ms!!!***
-## Mobile inference frameworks benchmark (4*ARM_CPU)
+## MobileNetV2-YOLOv3-Lite&Nano
+#### Mobile inference frameworks benchmark (4*ARM_CPU)
 Network|VOC mAP(0.5)|COCO mAP(0.5)|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|FLOPS|Weight size
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 MobileNetV2-YOLOv3-Lite|72.61|35.2|320|33 ms|18 ms|2.1BFlops|9.8MB
