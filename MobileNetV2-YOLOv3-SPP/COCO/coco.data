@@ -2,5 +2,5 @@ classes= 80
 train  = ~/COCO/train2017.txt
 valid  = ~/COCO/val2017.txt
 names = ~/COCO/coco.names
-backup = ~/MobileNetV2-YOLOv3-Lite_COCO/model
+backup = ~/MobileNetV2-YOLOv3-SPP_COCO/model
 
