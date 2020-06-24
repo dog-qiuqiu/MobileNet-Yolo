@@ -1,6 +1,6 @@
 ## 路过的大佬给颗星星吧
 ## 待办
-* 完成Nano VOC&COCO模型的提交来替换掉Tiny模型
+* 完成Nano VOC&COCO模型的提交来替换掉Tiny模型...显卡咆哮中...
 * 提交改进后的lite模型
 * 对MobileNetV2-YOLOv3-SPP进行优化训练
 * 开放MNN模型转换脚本
@@ -25,7 +25,6 @@ MobileNetV2-YOLO-Tiny|61.17|30.4|304|26 ms|11 ms|1.5BFlops|3.9MB
 [YOLO-Tiny](https://pjreddie.com/darknet/yolov2/)|57.1|&|416|& ms|& ms|6.97BFlops|60.0MB
 [YOLOv3-Tiny-Prn](https://github.com/AlexeyAB/darknet#pre-trained-models)|&|33.1|416|44 ms|& ms|3.5BFlops|18.8MB
 [YOLO-Nano](https://github.com/liux0614/yolo_nano)|69.1|&|416|& ms|& ms|4.57BFlops|4.0MB
-* nano明天提交VOC模型
 * Darknet Train Configuration: CUDA-version: 10010 (10020), cuDNN: 7.6.4,OpenCV version: 4 GPU:RTX2080ti
 * Support mobile inference frameworks such as NCNN&MNN
 ## Reference&Framework instructions&How to Train
