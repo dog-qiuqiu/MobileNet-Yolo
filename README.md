@@ -1,6 +1,5 @@
 ## 路过的大佬给颗星星吧
 ## 待办
-* 完成Nano VOC&COCO模型的提交来替换掉Tiny模型...显卡咆哮中...(6月26日: Nano COCO 现在AP05:28.8等AP05超过30在提交 )
 * 提交改进后的lite模型
 * 对MobileNetV2-YOLOv3-SPP进行优化训练
 * 开放MNN模型转换脚本
