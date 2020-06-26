@@ -1,0 +1,200 @@
+ CUDA-version: 10010 (10020), cuDNN: 7.6.4, CUDNN_HALF=1, GPU count: 8  
+ CUDNN_HALF=1 
+ OpenCV version: 4.9.1
+0,1,2,3,4,5,6,7
+ compute_capability = 750, cudnn_half = 1 
+net.optimized_memory = 0 
+mini_batch = 1, batch = 1, time_steps = 1, train = 0 
+   layer   filters  size/strd(dil)      input                output
+   0 conv     16       3 x 3/ 2    320 x 320 x   3 ->  160 x 160 x  16 0.022 BF
+   1 conv     16/  16  3 x 3/ 1    160 x 160 x  16 ->  160 x 160 x  16 0.007 BF
+   2 conv      8       1 x 1/ 1    160 x 160 x  16 ->  160 x 160 x   8 0.007 BF
+   3 conv     48       1 x 1/ 1    160 x 160 x   8 ->  160 x 160 x  48 0.020 BF
+   4 conv     48/  48  3 x 3/ 2    160 x 160 x  48 ->   80 x  80 x  48 0.006 BF
+   5 conv     12       1 x 1/ 1     80 x  80 x  48 ->   80 x  80 x  12 0.007 BF
+   6 conv     72       1 x 1/ 1     80 x  80 x  12 ->   80 x  80 x  72 0.011 BF
+   7 conv     72/  72  3 x 3/ 1     80 x  80 x  72 ->   80 x  80 x  72 0.008 BF
+   8 conv     12       1 x 1/ 1     80 x  80 x  72 ->   80 x  80 x  12 0.011 BF
+   9 activation: Using default 'linear'
+Shortcut Layer: 5,  wt = 0, wn = 0, outputs:  80 x  80 x  12 0.000 BF
+  10 conv     72       1 x 1/ 1     80 x  80 x  12 ->   80 x  80 x  72 0.011 BF
+  11 conv     72/  72  3 x 3/ 2     80 x  80 x  72 ->   40 x  40 x  72 0.002 BF
+  12 conv     16       1 x 1/ 1     40 x  40 x  72 ->   40 x  40 x  16 0.004 BF
+  13 conv     96       1 x 1/ 1     40 x  40 x  16 ->   40 x  40 x  96 0.005 BF
+  14 conv     96/  96  3 x 3/ 1     40 x  40 x  96 ->   40 x  40 x  96 0.003 BF
+  15 conv     16       1 x 1/ 1     40 x  40 x  96 ->   40 x  40 x  16 0.005 BF
+  16 activation: Using default 'linear'
+Shortcut Layer: 12,  wt = 0, wn = 0, outputs:  40 x  40 x  16 0.000 BF
+  17 conv     96       1 x 1/ 1     40 x  40 x  16 ->   40 x  40 x  96 0.005 BF
+  18 conv     96/  96  3 x 3/ 1     40 x  40 x  96 ->   40 x  40 x  96 0.003 BF
+  19 conv     16       1 x 1/ 1     40 x  40 x  96 ->   40 x  40 x  16 0.005 BF
+  20 activation: Using default 'linear'
+Shortcut Layer: 16,  wt = 0, wn = 0, outputs:  40 x  40 x  16 0.000 BF
+  21 conv     96       1 x 1/ 1     40 x  40 x  16 ->   40 x  40 x  96 0.005 BF
+  22 conv     96/  96  3 x 3/ 2     40 x  40 x  96 ->   20 x  20 x  96 0.001 BF
+  23 conv     32       1 x 1/ 1     20 x  20 x  96 ->   20 x  20 x  32 0.002 BF
+  24 conv    192       1 x 1/ 1     20 x  20 x  32 ->   20 x  20 x 192 0.005 BF
+  25 conv    192/ 192  3 x 3/ 1     20 x  20 x 192 ->   20 x  20 x 192 0.001 BF
+  26 conv     32       1 x 1/ 1     20 x  20 x 192 ->   20 x  20 x  32 0.005 BF
+  27 activation: Using default 'linear'
+Shortcut Layer: 23,  wt = 0, wn = 0, outputs:  20 x  20 x  32 0.000 BF
+  28 conv    192       1 x 1/ 1     20 x  20 x  32 ->   20 x  20 x 192 0.005 BF
+  29 conv    192/ 192  3 x 3/ 1     20 x  20 x 192 ->   20 x  20 x 192 0.001 BF
+  30 conv     32       1 x 1/ 1     20 x  20 x 192 ->   20 x  20 x  32 0.005 BF
+  31 activation: Using default 'linear'
+Shortcut Layer: 27,  wt = 0, wn = 0, outputs:  20 x  20 x  32 0.000 BF
+  32 conv    192       1 x 1/ 1     20 x  20 x  32 ->   20 x  20 x 192 0.005 BF
+  33 conv    192/ 192  3 x 3/ 1     20 x  20 x 192 ->   20 x  20 x 192 0.001 BF
+  34 conv     32       1 x 1/ 1     20 x  20 x 192 ->   20 x  20 x  32 0.005 BF
+  35 activation: Using default 'linear'
+Shortcut Layer: 31,  wt = 0, wn = 0, outputs:  20 x  20 x  32 0.000 BF
+  36 conv    192       1 x 1/ 1     20 x  20 x  32 ->   20 x  20 x 192 0.005 BF
+  37 conv    192/ 192  3 x 3/ 1     20 x  20 x 192 ->   20 x  20 x 192 0.001 BF
+  38 conv     48       1 x 1/ 1     20 x  20 x 192 ->   20 x  20 x  48 0.007 BF
+  39 conv    288       1 x 1/ 1     20 x  20 x  48 ->   20 x  20 x 288 0.011 BF
+  40 conv    288/ 288  3 x 3/ 1     20 x  20 x 288 ->   20 x  20 x 288 0.002 BF
+  41 conv     48       1 x 1/ 1     20 x  20 x 288 ->   20 x  20 x  48 0.011 BF
+  42 activation: Using default 'linear'
+Shortcut Layer: 38,  wt = 0, wn = 0, outputs:  20 x  20 x  48 0.000 BF
+  43 conv    288       1 x 1/ 1     20 x  20 x  48 ->   20 x  20 x 288 0.011 BF
+  44 conv    288/ 288  3 x 3/ 1     20 x  20 x 288 ->   20 x  20 x 288 0.002 BF
+  45 conv     48       1 x 1/ 1     20 x  20 x 288 ->   20 x  20 x  48 0.011 BF
+  46 activation: Using default 'linear'
+Shortcut Layer: 42,  wt = 0, wn = 0, outputs:  20 x  20 x  48 0.000 BF
+  47 conv    288       1 x 1/ 1     20 x  20 x  48 ->   20 x  20 x 288 0.011 BF
+  48 conv    288/ 288  3 x 3/ 2     20 x  20 x 288 ->   10 x  10 x 288 0.001 BF
+  49 conv     80       1 x 1/ 1     10 x  10 x 288 ->   10 x  10 x  80 0.005 BF
+  50 conv    480       1 x 1/ 1     10 x  10 x  80 ->   10 x  10 x 480 0.008 BF
+  51 conv    480/ 480  3 x 3/ 1     10 x  10 x 480 ->   10 x  10 x 480 0.001 BF
+  52 conv     80       1 x 1/ 1     10 x  10 x 480 ->   10 x  10 x  80 0.008 BF
+  53 activation: Using default 'linear'
+Shortcut Layer: 49,  wt = 0, wn = 0, outputs:  10 x  10 x  80 0.000 BF
+  54 conv    480       1 x 1/ 1     10 x  10 x  80 ->   10 x  10 x 480 0.008 BF
+  55 conv    480/ 480  3 x 3/ 1     10 x  10 x 480 ->   10 x  10 x 480 0.001 BF
+  56 conv     80       1 x 1/ 1     10 x  10 x 480 ->   10 x  10 x  80 0.008 BF
+  57 activation: Using default 'linear'
+Shortcut Layer: 53,  wt = 0, wn = 0, outputs:  10 x  10 x  80 0.000 BF
+  58 max                3x 3/ 1     10 x  10 x  80 ->   10 x  10 x  80 0.000 BF
+  59 route  57 		                           ->   10 x  10 x  80 
+  60 max                5x 5/ 1     10 x  10 x  80 ->   10 x  10 x  80 0.000 BF
+  61 route  57 		                           ->   10 x  10 x  80 
+  62 max                9x 9/ 1     10 x  10 x  80 ->   10 x  10 x  80 0.001 BF
+  63 route  62 60 58 57 	                   ->   10 x  10 x 320 
+  64 conv    288       1 x 1/ 1     10 x  10 x 320 ->   10 x  10 x 288 0.018 BF
+  65 conv    288/ 288  3 x 3/ 1     10 x  10 x 288 ->   10 x  10 x 288 0.001 BF
+  66 conv     96       1 x 1/ 1     10 x  10 x 288 ->   10 x  10 x  96 0.006 BF
+  67 conv    384       1 x 1/ 1     10 x  10 x  96 ->   10 x  10 x 384 0.007 BF
+  68 conv    255       1 x 1/ 1     10 x  10 x 384 ->   10 x  10 x 255 0.020 BF
+  69 yolo
+[yolo] params: iou loss: ciou (4), iou_norm: 0.07, cls_norm: 1.00, scale_x_y: 1.10
+nms_kind: greedynms (1), beta = 0.600000 
+  70 route  64 		                           ->   10 x  10 x 288 
+  71 upsample                 2x    10 x  10 x 288 ->   20 x  20 x 288
+  72 route  71 47 	                           ->   20 x  20 x 576 
+  73 conv     80       1 x 1/ 1     20 x  20 x 576 ->   20 x  20 x  80 0.037 BF
+  74 conv    288       1 x 1/ 1     20 x  20 x  80 ->   20 x  20 x 288 0.018 BF
+  75 conv    288/ 288  3 x 3/ 1     20 x  20 x 288 ->   20 x  20 x 288 0.002 BF
+  76 conv    192       1 x 1/ 1     20 x  20 x 288 ->   20 x  20 x 192 0.044 BF
+  77 conv    288       1 x 1/ 1     20 x  20 x 192 ->   20 x  20 x 288 0.044 BF
+  78 conv    255       1 x 1/ 1     20 x  20 x 288 ->   20 x  20 x 255 0.059 BF
+  79 yolo
+[yolo] params: iou loss: ciou (4), iou_norm: 0.07, cls_norm: 1.00, scale_x_y: 1.05
+nms_kind: greedynms (1), beta = 0.600000 
+Total BFLOPS 0.551 
+avg_outputs = 101507 
+ Allocate additional workspace_size = 3.02 MB 
+Loading weights from yolov3-mobilenetv2-litev3-coco_best.weights...
+ seen 64, trained: 14547 K-images (227 Kilo-batches_64) 
+Done! Loaded 80 layers from weights-file 
+
+ calculation mAP (mean average precision)...
+4476
+ detections_count = 452047, unique_truth_count = 25679  
+class_id = 0, name = person, ap = 55.71%   	 (TP = 3811, FP = 2776) 
+class_id = 1, name = bicycle, ap = 27.32%   	 (TP = 50, FP = 51) 
+class_id = 2, name = car, ap = 27.16%   	 (TP = 461, FP = 807) 
+class_id = 3, name = motorbike, ap = 0.00%   	 (TP = 0, FP = 0) 
+class_id = 4, name = aeroplane, ap = 0.00%   	 (TP = 0, FP = 0) 
+class_id = 5, name = bus, ap = 65.62%   	 (TP = 130, FP = 44) 
+class_id = 6, name = train, ap = 70.19%   	 (TP = 120, FP = 45) 
+class_id = 7, name = truck, ap = 29.29%   	 (TP = 95, FP = 117) 
+class_id = 8, name = boat, ap = 14.94%   	 (TP = 61, FP = 141) 
+class_id = 9, name = traffic light, ap = 14.94%   	 (TP = 103, FP = 163) 
+class_id = 10, name = fire hydrant, ap = 55.14%   	 (TP = 50, FP = 17) 
+class_id = 11, name = stop sign, ap = 57.06%   	 (TP = 40, FP = 14) 
+class_id = 12, name = parking meter, ap = 34.31%   	 (TP = 16, FP = 6) 
+class_id = 13, name = bench, ap = 17.45%   	 (TP = 58, FP = 72) 
+class_id = 14, name = bird, ap = 33.42%   	 (TP = 71, FP = 49) 
+class_id = 15, name = cat, ap = 73.55%   	 (TP = 136, FP = 80) 
+class_id = 16, name = dog, ap = 60.32%   	 (TP = 122, FP = 99) 
+class_id = 17, name = horse, ap = 54.35%   	 (TP = 126, FP = 109) 
+class_id = 18, name = sheep, ap = 41.42%   	 (TP = 107, FP = 162) 
+class_id = 19, name = cow, ap = 43.74%   	 (TP = 109, FP = 110) 
+class_id = 20, name = elephant, ap = 70.19%   	 (TP = 145, FP = 79) 
+class_id = 21, name = bear, ap = 72.47%   	 (TP = 45, FP = 13) 
+class_id = 22, name = zebra, ap = 74.64%   	 (TP = 162, FP = 55) 
+class_id = 23, name = giraffe, ap = 72.62%   	 (TP = 157, FP = 49) 
+class_id = 24, name = backpack, ap = 4.98%   	 (TP = 15, FP = 53) 
+class_id = 25, name = umbrella, ap = 33.11%   	 (TP = 89, FP = 76) 
+class_id = 26, name = handbag, ap = 2.50%   	 (TP = 9, FP = 51) 
+class_id = 27, name = tie, ap = 26.49%   	 (TP = 48, FP = 73) 
+class_id = 28, name = suitcase, ap = 17.84%   	 (TP = 42, FP = 64) 
+class_id = 29, name = frisbee, ap = 43.53%   	 (TP = 50, FP = 44) 
+class_id = 30, name = skis, ap = 16.44%   	 (TP = 35, FP = 97) 
+class_id = 31, name = snowboard, ap = 15.47%   	 (TP = 10, FP = 32) 
+class_id = 32, name = sports ball, ap = 27.87%   	 (TP = 55, FP = 53) 
+class_id = 33, name = kite, ap = 44.07%   	 (TP = 69, FP = 67) 
+class_id = 34, name = baseball bat, ap = 23.00%   	 (TP = 26, FP = 40) 
+class_id = 35, name = baseball glove, ap = 29.12%   	 (TP = 32, FP = 41) 
+class_id = 36, name = skateboard, ap = 34.35%   	 (TP = 61, FP = 73) 
+class_id = 37, name = surfboard, ap = 23.94%   	 (TP = 71, FP = 137) 
+class_id = 38, name = tennis racket, ap = 35.89%   	 (TP = 70, FP = 89) 
+class_id = 39, name = bottle, ap = 16.01%   	 (TP = 129, FP = 223) 
+class_id = 40, name = wine glass, ap = 16.97%   	 (TP = 41, FP = 54) 
+class_id = 41, name = cup, ap = 22.32%   	 (TP = 177, FP = 258) 
+class_id = 42, name = fork, ap = 9.33%   	 (TP = 24, FP = 48) 
+class_id = 43, name = knife, ap = 2.20%   	 (TP = 5, FP = 34) 
+class_id = 44, name = spoon, ap = 2.28%   	 (TP = 4, FP = 14) 
+class_id = 45, name = bowl, ap = 28.83%   	 (TP = 143, FP = 186) 
+class_id = 46, name = banana, ap = 19.95%   	 (TP = 46, FP = 62) 
+class_id = 47, name = apple, ap = 9.99%   	 (TP = 19, FP = 53) 
+class_id = 48, name = sandwich, ap = 33.85%   	 (TP = 61, FP = 62) 
+class_id = 49, name = orange, ap = 24.72%   	 (TP = 74, FP = 109) 
+class_id = 50, name = broccoli, ap = 24.53%   	 (TP = 68, FP = 110) 
+class_id = 51, name = carrot, ap = 10.27%   	 (TP = 36, FP = 76) 
+class_id = 52, name = hot dog, ap = 29.87%   	 (TP = 27, FP = 34) 
+class_id = 53, name = pizza, ap = 58.78%   	 (TP = 135, FP = 80) 
+class_id = 54, name = donut, ap = 43.71%   	 (TP = 85, FP = 93) 
+class_id = 55, name = cake, ap = 30.05%   	 (TP = 60, FP = 65) 
+class_id = 56, name = chair, ap = 17.53%   	 (TP = 193, FP = 316) 
+class_id = 57, name = sofa, ap = 0.00%   	 (TP = 0, FP = 0) 
+class_id = 58, name = pottedplant, ap = 0.00%   	 (TP = 0, FP = 0) 
+class_id = 59, name = bed, ap = 46.69%   	 (TP = 65, FP = 52) 
+class_id = 60, name = diningtable, ap = 0.00%   	 (TP = 0, FP = 0) 
+class_id = 61, name = toilet, ap = 65.05%   	 (TP = 103, FP = 50) 
+class_id = 62, name = tvmonitor, ap = 0.00%   	 (TP = 0, FP = 0) 
+class_id = 63, name = laptop, ap = 51.70%   	 (TP = 102, FP = 70) 
+class_id = 64, name = mouse, ap = 44.82%   	 (TP = 47, FP = 39) 
+class_id = 65, name = remote, ap = 5.70%   	 (TP = 21, FP = 76) 
+class_id = 66, name = keyboard, ap = 42.86%   	 (TP = 64, FP = 79) 
+class_id = 67, name = cell phone, ap = 21.48%   	 (TP = 51, FP = 50) 
+class_id = 68, name = microwave, ap = 46.12%   	 (TP = 23, FP = 13) 
+class_id = 69, name = oven, ap = 31.42%   	 (TP = 42, FP = 42) 
+class_id = 70, name = toaster, ap = 3.62%   	 (TP = 0, FP = 0) 
+class_id = 71, name = sink, ap = 28.53%   	 (TP = 67, FP = 90) 
+class_id = 72, name = refrigerator, ap = 39.33%   	 (TP = 45, FP = 41) 
+class_id = 73, name = book, ap = 3.23%   	 (TP = 39, FP = 167) 
+class_id = 74, name = clock, ap = 50.04%   	 (TP = 119, FP = 63) 
+class_id = 75, name = vase, ap = 18.08%   	 (TP = 42, FP = 61) 
+class_id = 76, name = scissors, ap = 13.84%   	 (TP = 3, FP = 3) 
+class_id = 77, name = teddy bear, ap = 49.79%   	 (TP = 70, FP = 40) 
+class_id = 78, name = hair drier, ap = 0.00%   	 (TP = 0, FP = 0) 
+class_id = 79, name = toothbrush, ap = 2.41%   	 (TP = 1, FP = 6) 
+
+ for conf_thresh = 0.25, precision = 0.51, recall = 0.35, F1-score = 0.42 
+ for conf_thresh = 0.25, TP = 9088, FP = 8867, FN = 16591, average IoU = 37.13 % 
+
+ IoU threshold = 50 %, used Area-Under-Curve for each unique Recall 
+ mean average precision (mAP@0.50) = 0.301291, or 30.13 % 
+Total Detection Time: 51 Seconds
+
