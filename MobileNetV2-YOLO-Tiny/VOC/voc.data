@@ -1,6 +1,0 @@
-classes= 20
-train  = ~/DATASET/VOC/train.txt
-valid  = ~/VOC/2007_test.txt
-names = ~/VOC/voc.names
-backup = ~/MobileNetV2-YOLO-Tiny_VOC/model
-
