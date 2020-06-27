@@ -1,7 +1,6 @@
- CUDA-version: 10010 (10020), cuDNN: 7.6.4, CUDNN_HALF=1, GPU count: 8  
+CUDA-version: 10010 (10020), cuDNN: 7.6.4, CUDNN_HALF=1, GPU count: 8  
  CUDNN_HALF=1 
  OpenCV version: 4.9.1
-0,1,2,3
  compute_capability = 750, cudnn_half = 1 
 net.optimized_memory = 0 
 mini_batch = 1, batch = 1, time_steps = 1, train = 0 
@@ -75,112 +74,127 @@ Shortcut Layer: 50,  wt = 0, wn = 0, outputs:  10 x  10 x 160 0.000 BF
   57 conv    160       1 x 1/ 1     10 x  10 x 960 ->   10 x  10 x 160 0.031 BF
   58 activation: Using default 'linear'
 Shortcut Layer: 54,  wt = 0, wn = 0, outputs:  10 x  10 x 160 0.000 BF
-  59 conv    960       1 x 1/ 1     10 x  10 x 160 ->   10 x  10 x 960 0.031 BF
-  60 conv    960/ 960  3 x 3/ 1     10 x  10 x 960 ->   10 x  10 x 960 0.002 BF
-  61 conv    320       1 x 1/ 1     10 x  10 x 960 ->   10 x  10 x 320 0.061 BF
-  62 upsample                 2x    10 x  10 x 320 ->   20 x  20 x 320
-  63 route  62 47 	                           ->   20 x  20 x 416 
-  64 conv    576       1 x 1/ 1     20 x  20 x 416 ->   20 x  20 x 576 0.192 BF
-  65 conv    576/ 576  3 x 3/ 1     20 x  20 x 576 ->   20 x  20 x 576 0.004 BF
-  66 conv    192       1 x 1/ 1     20 x  20 x 576 ->   20 x  20 x 192 0.088 BF
-  67 conv    768       1 x 1/ 1     20 x  20 x 192 ->   20 x  20 x 768 0.118 BF
-  68 conv    425       1 x 1/ 1     20 x  20 x 768 ->   20 x  20 x 425 0.261 BF
-  69 yolo
+  59 max                3x 3/ 1     10 x  10 x 160 ->   10 x  10 x 160 0.000 BF
+  60 route  58 		                           ->   10 x  10 x 160 
+  61 max                5x 5/ 1     10 x  10 x 160 ->   10 x  10 x 160 0.000 BF
+  62 route  58 		                           ->   10 x  10 x 160 
+  63 max                9x 9/ 1     10 x  10 x 160 ->   10 x  10 x 160 0.001 BF
+  64 route  63 61 59 58 	                   ->   10 x  10 x 640 
+  65 conv    288       1 x 1/ 1     10 x  10 x 640 ->   10 x  10 x 288 0.037 BF
+  66 conv    288/ 288  3 x 3/ 1     10 x  10 x 288 ->   10 x  10 x 288 0.001 BF
+  67 conv     96       1 x 1/ 1     10 x  10 x 288 ->   10 x  10 x  96 0.006 BF
+  68 conv    384       1 x 1/ 1     10 x  10 x  96 ->   10 x  10 x 384 0.007 BF
+  69 conv    255       1 x 1/ 1     10 x  10 x 384 ->   10 x  10 x 255 0.020 BF
+  70 yolo
 [yolo] params: iou loss: ciou (4), iou_norm: 0.07, cls_norm: 1.00, scale_x_y: 1.10
 nms_kind: greedynms (1), beta = 0.600000 
-Total BFLOPS 2.328 
-avg_outputs = 289062 
+  71 route  65 		                           ->   10 x  10 x 288 
+  72 upsample                 2x    10 x  10 x 288 ->   20 x  20 x 288
+  73 route  72 48 	                           ->   20 x  20 x 864 
+  74 conv     80       1 x 1/ 1     20 x  20 x 864 ->   20 x  20 x  80 0.055 BF
+  75 conv    288       1 x 1/ 1     20 x  20 x  80 ->   20 x  20 x 288 0.018 BF
+  76 conv    288/ 288  3 x 3/ 1     20 x  20 x 288 ->   20 x  20 x 288 0.002 BF
+  77 conv    192       1 x 1/ 1     20 x  20 x 288 ->   20 x  20 x 192 0.044 BF
+  78 conv    288       1 x 1/ 1     20 x  20 x 192 ->   20 x  20 x 288 0.044 BF
+  79 conv    255       1 x 1/ 1     20 x  20 x 288 ->   20 x  20 x 255 0.059 BF
+  80 yolo
+[yolo] params: iou loss: ciou (4), iou_norm: 0.07, cls_norm: 1.00, scale_x_y: 1.05
+nms_kind: greedynms (1), beta = 0.600000 
+Total BFLOPS 1.866 
+avg_outputs = 246664 
  Allocate additional workspace_size = 5.89 MB 
-Loading weights from yolov3-mobilenetv2-lite-coco.weights...
- seen 64, trained: 16016 K-images (250 Kilo-batches_64) 
-Done! Loaded 70 layers from weights-file 
+Loading weights from yolov3-mobilenetv2-lite-coco_best.weights...
+ seen 64, trained: 7226 K-images (112 Kilo-batches_64) 
+Done! Loaded 81 layers from weights-file 
 
  calculation mAP (mean average precision)...
 4476
- detections_count = 306208, unique_truth_count = 25679  
-class_id = 0, name = person, ap = 60.77%   	 (TP = 4282, FP = 2536) 
-class_id = 1, name = bicycle, ap = 27.95%   	 (TP = 63, FP = 69) 
-class_id = 2, name = car, ap = 35.88%   	 (TP = 624, FP = 850) 
+ detections_count = 340778, unique_truth_count = 25679  
+class_id = 0, name = person, ap = 61.87%   	 (TP = 4312, FP = 2885) 
+class_id = 1, name = bicycle, ap = 29.75%   	 (TP = 62, FP = 80) 
+class_id = 2, name = car, ap = 36.31%   	 (TP = 638, FP = 918) 
 class_id = 3, name = motorbike, ap = 0.00%   	 (TP = 0, FP = 0) 
 class_id = 4, name = aeroplane, ap = 0.00%   	 (TP = 0, FP = 0) 
-class_id = 5, name = bus, ap = 68.56%   	 (TP = 139, FP = 62) 
-class_id = 6, name = train, ap = 73.07%   	 (TP = 126, FP = 36) 
-class_id = 7, name = truck, ap = 35.13%   	 (TP = 131, FP = 177) 
-class_id = 8, name = boat, ap = 22.85%   	 (TP = 93, FP = 168) 
-class_id = 9, name = traffic light, ap = 21.26%   	 (TP = 133, FP = 248) 
-class_id = 10, name = fire hydrant, ap = 66.21%   	 (TP = 61, FP = 23) 
-class_id = 11, name = stop sign, ap = 58.15%   	 (TP = 41, FP = 20) 
-class_id = 12, name = parking meter, ap = 40.08%   	 (TP = 20, FP = 12) 
-class_id = 13, name = bench, ap = 22.54%   	 (TP = 73, FP = 86) 
-class_id = 14, name = bird, ap = 40.15%   	 (TP = 90, FP = 77) 
-class_id = 15, name = cat, ap = 78.57%   	 (TP = 140, FP = 72) 
-class_id = 16, name = dog, ap = 66.45%   	 (TP = 134, FP = 114) 
-class_id = 17, name = horse, ap = 63.60%   	 (TP = 142, FP = 62) 
-class_id = 18, name = sheep, ap = 47.71%   	 (TP = 124, FP = 152) 
-class_id = 19, name = cow, ap = 57.00%   	 (TP = 138, FP = 108) 
-class_id = 20, name = elephant, ap = 74.57%   	 (TP = 151, FP = 45) 
-class_id = 21, name = bear, ap = 75.04%   	 (TP = 49, FP = 18) 
-class_id = 22, name = zebra, ap = 76.93%   	 (TP = 167, FP = 42) 
-class_id = 23, name = giraffe, ap = 77.80%   	 (TP = 173, FP = 33) 
-class_id = 24, name = backpack, ap = 6.90%   	 (TP = 28, FP = 104) 
-class_id = 25, name = umbrella, ap = 38.47%   	 (TP = 103, FP = 59) 
-class_id = 26, name = handbag, ap = 4.07%   	 (TP = 20, FP = 109) 
-class_id = 27, name = tie, ap = 34.66%   	 (TP = 64, FP = 89) 
-class_id = 28, name = suitcase, ap = 20.74%   	 (TP = 46, FP = 65) 
-class_id = 29, name = frisbee, ap = 46.99%   	 (TP = 50, FP = 52) 
-class_id = 30, name = skis, ap = 24.53%   	 (TP = 52, FP = 94) 
-class_id = 31, name = snowboard, ap = 31.08%   	 (TP = 16, FP = 35) 
-class_id = 32, name = sports ball, ap = 37.13%   	 (TP = 72, FP = 76) 
-class_id = 33, name = kite, ap = 40.59%   	 (TP = 65, FP = 62) 
-class_id = 34, name = baseball bat, ap = 24.92%   	 (TP = 31, FP = 39) 
-class_id = 35, name = baseball glove, ap = 35.44%   	 (TP = 44, FP = 63) 
-class_id = 36, name = skateboard, ap = 44.35%   	 (TP = 66, FP = 75) 
-class_id = 37, name = surfboard, ap = 37.28%   	 (TP = 97, FP = 122) 
-class_id = 38, name = tennis racket, ap = 52.48%   	 (TP = 96, FP = 69) 
-class_id = 39, name = bottle, ap = 23.46%   	 (TP = 194, FP = 335) 
-class_id = 40, name = wine glass, ap = 21.70%   	 (TP = 55, FP = 88) 
-class_id = 41, name = cup, ap = 29.54%   	 (TP = 245, FP = 316) 
-class_id = 42, name = fork, ap = 21.65%   	 (TP = 38, FP = 58) 
-class_id = 43, name = knife, ap = 5.47%   	 (TP = 22, FP = 57) 
-class_id = 44, name = spoon, ap = 6.63%   	 (TP = 23, FP = 53) 
-class_id = 45, name = bowl, ap = 33.77%   	 (TP = 183, FP = 235) 
-class_id = 46, name = banana, ap = 21.01%   	 (TP = 51, FP = 82) 
-class_id = 47, name = apple, ap = 9.19%   	 (TP = 26, FP = 78) 
-class_id = 48, name = sandwich, ap = 41.25%   	 (TP = 72, FP = 68) 
-class_id = 49, name = orange, ap = 23.78%   	 (TP = 73, FP = 116) 
-class_id = 50, name = broccoli, ap = 27.07%   	 (TP = 71, FP = 101) 
-class_id = 51, name = carrot, ap = 12.32%   	 (TP = 49, FP = 133) 
-class_id = 52, name = hot dog, ap = 34.51%   	 (TP = 29, FP = 30) 
-class_id = 53, name = pizza, ap = 60.74%   	 (TP = 143, FP = 65) 
-class_id = 54, name = donut, ap = 45.54%   	 (TP = 88, FP = 74) 
-class_id = 55, name = cake, ap = 31.06%   	 (TP = 70, FP = 87) 
-class_id = 56, name = chair, ap = 24.74%   	 (TP = 307, FP = 425) 
+class_id = 5, name = bus, ap = 69.96%   	 (TP = 143, FP = 76) 
+class_id = 6, name = train, ap = 75.96%   	 (TP = 130, FP = 47) 
+class_id = 7, name = truck, ap = 37.95%   	 (TP = 133, FP = 170) 
+class_id = 8, name = boat, ap = 23.35%   	 (TP = 89, FP = 184) 
+class_id = 9, name = traffic light, ap = 22.84%   	 (TP = 144, FP = 265) 
+class_id = 10, name = fire hydrant, ap = 68.87%   	 (TP = 61, FP = 13) 
+class_id = 11, name = stop sign, ap = 60.35%   	 (TP = 43, FP = 12) 
+class_id = 12, name = parking meter, ap = 45.69%   	 (TP = 24, FP = 7) 
+class_id = 13, name = bench, ap = 24.11%   	 (TP = 87, FP = 134) 
+class_id = 14, name = bird, ap = 41.77%   	 (TP = 88, FP = 81) 
+class_id = 15, name = cat, ap = 80.45%   	 (TP = 146, FP = 93) 
+class_id = 16, name = dog, ap = 67.05%   	 (TP = 134, FP = 120) 
+class_id = 17, name = horse, ap = 63.84%   	 (TP = 151, FP = 89) 
+class_id = 18, name = sheep, ap = 54.42%   	 (TP = 141, FP = 156) 
+class_id = 19, name = cow, ap = 55.70%   	 (TP = 132, FP = 110) 
+class_id = 20, name = elephant, ap = 73.33%   	 (TP = 149, FP = 73) 
+class_id = 21, name = bear, ap = 77.28%   	 (TP = 52, FP = 15) 
+class_id = 22, name = zebra, ap = 77.97%   	 (TP = 170, FP = 54) 
+class_id = 23, name = giraffe, ap = 77.86%   	 (TP = 173, FP = 55) 
+class_id = 24, name = backpack, ap = 7.25%   	 (TP = 35, FP = 146) 
+class_id = 25, name = umbrella, ap = 41.18%   	 (TP = 111, FP = 91) 
+class_id = 26, name = handbag, ap = 4.34%   	 (TP = 28, FP = 135) 
+class_id = 27, name = tie, ap = 32.86%   	 (TP = 61, FP = 91) 
+class_id = 28, name = suitcase, ap = 26.80%   	 (TP = 65, FP = 88) 
+class_id = 29, name = frisbee, ap = 52.70%   	 (TP = 53, FP = 44) 
+class_id = 30, name = skis, ap = 20.18%   	 (TP = 57, FP = 129) 
+class_id = 31, name = snowboard, ap = 36.11%   	 (TP = 21, FP = 30) 
+class_id = 32, name = sports ball, ap = 41.37%   	 (TP = 78, FP = 65) 
+class_id = 33, name = kite, ap = 43.33%   	 (TP = 71, FP = 80) 
+class_id = 34, name = baseball bat, ap = 23.76%   	 (TP = 34, FP = 54) 
+class_id = 35, name = baseball glove, ap = 36.20%   	 (TP = 44, FP = 64) 
+class_id = 36, name = skateboard, ap = 42.82%   	 (TP = 73, FP = 72) 
+class_id = 37, name = surfboard, ap = 37.41%   	 (TP = 98, FP = 153) 
+class_id = 38, name = tennis racket, ap = 51.98%   	 (TP = 91, FP = 75) 
+class_id = 39, name = bottle, ap = 25.31%   	 (TP = 205, FP = 303) 
+class_id = 40, name = wine glass, ap = 23.15%   	 (TP = 59, FP = 109) 
+class_id = 41, name = cup, ap = 30.68%   	 (TP = 250, FP = 347) 
+class_id = 42, name = fork, ap = 20.45%   	 (TP = 40, FP = 72) 
+class_id = 43, name = knife, ap = 6.01%   	 (TP = 24, FP = 96) 
+class_id = 44, name = spoon, ap = 7.27%   	 (TP = 20, FP = 58) 
+class_id = 45, name = bowl, ap = 35.25%   	 (TP = 196, FP = 246) 
+class_id = 46, name = banana, ap = 24.19%   	 (TP = 60, FP = 94) 
+class_id = 47, name = apple, ap = 10.78%   	 (TP = 31, FP = 106) 
+class_id = 48, name = sandwich, ap = 39.67%   	 (TP = 69, FP = 75) 
+class_id = 49, name = orange, ap = 30.56%   	 (TP = 93, FP = 152) 
+class_id = 50, name = broccoli, ap = 29.19%   	 (TP = 85, FP = 144) 
+class_id = 51, name = carrot, ap = 16.29%   	 (TP = 60, FP = 119) 
+class_id = 52, name = hot dog, ap = 37.47%   	 (TP = 30, FP = 32) 
+class_id = 53, name = pizza, ap = 59.97%   	 (TP = 146, FP = 102) 
+class_id = 54, name = donut, ap = 48.27%   	 (TP = 95, FP = 100) 
+class_id = 55, name = cake, ap = 35.49%   	 (TP = 79, FP = 96) 
+class_id = 56, name = chair, ap = 25.28%   	 (TP = 337, FP = 515) 
 class_id = 57, name = sofa, ap = 0.00%   	 (TP = 0, FP = 0) 
 class_id = 58, name = pottedplant, ap = 0.00%   	 (TP = 0, FP = 0) 
-class_id = 59, name = bed, ap = 44.17%   	 (TP = 68, FP = 80) 
+class_id = 59, name = bed, ap = 53.22%   	 (TP = 84, FP = 82) 
 class_id = 60, name = diningtable, ap = 0.00%   	 (TP = 0, FP = 0) 
-class_id = 61, name = toilet, ap = 63.25%   	 (TP = 103, FP = 54) 
+class_id = 61, name = toilet, ap = 64.46%   	 (TP = 113, FP = 50) 
 class_id = 62, name = tvmonitor, ap = 0.00%   	 (TP = 0, FP = 0) 
-class_id = 63, name = laptop, ap = 56.06%   	 (TP = 111, FP = 74) 
-class_id = 64, name = mouse, ap = 53.29%   	 (TP = 55, FP = 31) 
-class_id = 65, name = remote, ap = 13.75%   	 (TP = 47, FP = 91) 
-class_id = 66, name = keyboard, ap = 47.70%   	 (TP = 73, FP = 82) 
-class_id = 67, name = cell phone, ap = 27.03%   	 (TP = 66, FP = 72) 
-class_id = 68, name = microwave, ap = 52.53%   	 (TP = 25, FP = 18) 
-class_id = 69, name = oven, ap = 41.10%   	 (TP = 58, FP = 39) 
-class_id = 70, name = toaster, ap = 16.21%   	 (TP = 0, FP = 1) 
-class_id = 71, name = sink, ap = 37.53%   	 (TP = 84, FP = 90) 
-class_id = 72, name = refrigerator, ap = 51.34%   	 (TP = 53, FP = 35) 
-class_id = 73, name = book, ap = 4.50%   	 (TP = 63, FP = 293) 
-class_id = 74, name = clock, ap = 56.04%   	 (TP = 136, FP = 71) 
-class_id = 75, name = vase, ap = 27.13%   	 (TP = 64, FP = 73) 
-class_id = 76, name = scissors, ap = 16.72%   	 (TP = 6, FP = 7) 
-class_id = 77, name = teddy bear, ap = 57.19%   	 (TP = 83, FP = 42) 
-class_id = 78, name = hair drier, ap = 0.00%   	 (TP = 0, FP = 0) 
-class_id = 79, name = toothbrush, ap = 12.41%   	 (TP = 7, FP = 16) 
+class_id = 63, name = laptop, ap = 57.68%   	 (TP = 120, FP = 108) 
+class_id = 64, name = mouse, ap = 55.03%   	 (TP = 57, FP = 39) 
+class_id = 65, name = remote, ap = 15.61%   	 (TP = 46, FP = 91) 
+class_id = 66, name = keyboard, ap = 51.84%   	 (TP = 81, FP = 85) 
+class_id = 67, name = cell phone, ap = 28.16%   	 (TP = 65, FP = 81) 
+class_id = 68, name = microwave, ap = 54.13%   	 (TP = 27, FP = 25) 
+class_id = 69, name = oven, ap = 42.16%   	 (TP = 61, FP = 57) 
+class_id = 70, name = toaster, ap = 6.94%   	 (TP = 0, FP = 0) 
+class_id = 71, name = sink, ap = 40.48%   	 (TP = 96, FP = 97) 
+class_id = 72, name = refrigerator, ap = 49.88%   	 (TP = 58, FP = 44) 
+class_id = 73, name = book, ap = 5.83%   	 (TP = 84, FP = 320) 
+class_id = 74, name = clock, ap = 56.59%   	 (TP = 140, FP = 81) 
+class_id = 75, name = vase, ap = 25.72%   	 (TP = 66, FP = 82) 
+class_id = 76, name = scissors, ap = 24.32%   	 (TP = 7, FP = 11) 
+class_id = 77, name = teddy bear, ap = 53.86%   	 (TP = 86, FP = 63) 
+class_id = 78, name = hair drier, ap = 0.07%   	 (TP = 0, FP = 0) 
+class_id = 79, name = toothbrush, ap = 9.35%   	 (TP = 6, FP = 25) 
 
- for conf_thresh = 0.25, precision = 0.53, recall = 0.42, F1-score = 0.47 
- for conf_thresh = 0.25, TP = 10785, FP = 9693, FN = 14894, average IoU = 39.39 % 
+ for conf_thresh = 0.25, precision = 0.50, recall = 0.44, F1-score = 0.47 
+ for conf_thresh = 0.25, TP = 11198, FP = 11061, FN = 14481, average IoU = 37.18 % 
 
  IoU threshold = 50 %, used Area-Under-Curve for each unique Recall 
- mean average precision (mAP@0.50) = 0.352654, or 35.27 % 
+ mean average precision (mAP@0.50) = 0.365699, or 36.57 % 
+Total Detection Time: 38 Seconds
+
