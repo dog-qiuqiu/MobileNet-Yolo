@@ -1,6 +1,5 @@
 ## 路过的大佬给颗星星吧
 ## 待办
-* 提交改进后的lite模型
 * 对MobileNetV2-YOLOv3-SPP进行优化训练
 * 开放MNN模型转换脚本
 * 开放andooid示例项目
