@@ -2,6 +2,7 @@
 ## 待办
 * 开放MNN模型转换脚本
 * 开放andooid示例项目
+* 开放fastest版本模型，0.1Bflops，1MB
 ## MobileNetv2-YOLOv3-SPP Darknet 
 
 A darknet implementation of MobileNetv2-YOLOv3-SPP detection network
