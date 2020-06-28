@@ -9,7 +9,7 @@ A darknet implementation of MobileNetv2-YOLOv3-SPP detection network
 
 Network|COCO mAP(0.5)|Resolution|FLOPS|Weight size
 :---:|:---:|:---:|:---:|:---:
-MobileNetV2-YOLOv3-SPP|42.6|416|5ms|6.1BFlops|17.6
+MobileNetV2-YOLOv3-SPP|42.6|416|6.1BFlops|17.6
 [YOLOv4-Tiny](https://github.com/AlexeyAB/darknet#pre-trained-models)|40.2|416|6.9BFlops|23.1MB
 
 *emmmm...这个懒得训练，mAP就凑合这样吧
