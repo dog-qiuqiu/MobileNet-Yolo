@@ -41,7 +41,14 @@ MobileNetV2-YOLOv3-Fastest|320|& ms|& ms|& ms|0.1BFlops|500KB
 ## MobileNetV2-YOLOv3-Lite-COCO Test results
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/predictions.jpg)
 
-
+## DarkNet2caffe tutorial
+  ```
+    cd darknet2caffe/
+    python darknet2caffe.py MobileNetV2-YOLOv3-Lite-voc.cfg MobileNetV2-YOLOv3-Lite-voc.weights MobileNetV2-YOLOv3-Lite-voc.prototxt MobileNetV2-YOLOv3-Lite-voc.caffemodel
+    cp MobileNetV2-YOLOv3-Lite-voc* sample
+    cd sample
+    python detector.py
+  ```
 ## NCNN conversion tutorial
 * benchmark:https://github.com/Tencent/ncnn/tree/master/benchmark
 * darknet2ncnn: https://github.com/Tencent/ncnn/tree/master/tools/darknet
