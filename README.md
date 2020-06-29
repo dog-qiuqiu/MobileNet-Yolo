@@ -45,7 +45,8 @@ MobileNetV2-YOLOv3-Fastest|320|& ms|& ms|& ms|0.1BFlops|500KB
   ```
     cd darknet2caffe/
     python darknet2caffe.py MobileNetV2-YOLOv3-Nano-voc.cfg MobileNetV2-YOLOv3-Nano-voc.weights MobileNetV2-YOLOv3-Nano-voc.prototxt MobileNetV2-YOLOv3-Nano-voc.caffemodel
-    cp MobileNetV2-YOLOv3-Lite-voc* sample
+    cp MobileNetV2-YOLOv3-Nano-voc.prototxt sample
+    cp MobileNetV2-YOLOv3-Nano-voc.caffemodel sample
     cd sample
     python detector.py
   ```
