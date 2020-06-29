@@ -25,6 +25,10 @@ MobileNetV2-YOLOv3-Fastest|&|&|320|& ms|& ms|0.13BFlops|1.0MB
 [YOLO-Nano](https://github.com/liux0614/yolo_nano)|69.1|&|416|& ms|& ms|4.57BFlops|4.0MB
 * Darknet Train Configuration: CUDA-version: 10010 (10020), cuDNN: 7.6.4,OpenCV version: 4 GPU:RTX2080ti
 * Support mobile inference frameworks such as NCNN&MNN
+## MobileNetV2-YOLO-Fastest
+Network|Resolution|Inference time (DarkNet/i7-6700)|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)||FLOPS|Weight size
+:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
+MobileNetV2-YOLOv3-Fastest|320|& ms|& ms|& ms|0.1BFlops|500KB
 ## Reference&Framework instructions&How to Train
 * https://github.com/AlexeyAB/darknet
 * You must use a pre-trained model to train your own data set. You can make a pre-trained model based on the weights of COCO training in this project to initialize the network parameters
