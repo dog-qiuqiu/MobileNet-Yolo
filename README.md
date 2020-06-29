@@ -46,12 +46,12 @@ MobileNetV2-YOLOv3-Fastest|320|28 ms|8.2 ms|3.67 ms|0.13BFlops|500KB
 * python-opencv
 * Caffe(add upsample layer https://github.com/dog-qiuqiu/caffe-upsample)
   ```
- 	cd darknet2caffe/
+	cd darknet2caffe/
 	python darknet2caffe.py MobileNetV2-YOLOv3-Nano-voc.cfg MobileNetV2-YOLOv3-Nano-voc.weights MobileNetV2-YOLOv3-Nano-voc.prototxt MobileNetV2-YOLOv3-Nano-voc.caffemodel
-        cp MobileNetV2-YOLOv3-Nano-voc.prototxt sample
-        cp MobileNetV2-YOLOv3-Nano-voc.caffemodel sample
-        cd sample
-        python detector.py
+	cp MobileNetV2-YOLOv3-Nano-voc.prototxt sample
+	cp MobileNetV2-YOLOv3-Nano-voc.caffemodel sample
+	cd sample
+	python detector.py
   ```
 ### MNN conversion tutorial
 * Convert darknet model to caffemodel through darknet2caffe
