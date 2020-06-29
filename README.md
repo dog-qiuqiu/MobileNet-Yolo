@@ -47,37 +47,37 @@ MobileNetV2-YOLOv3-Fastest|320|28 ms|3.67 ms|9.2 ms|0.1BFlops|500KB
 * python-opencv
 * Caffe(add upsample layer https://github.com/dog-qiuqiu/caffe-upsample)
   ```
-    cd darknet2caffe/
-    python darknet2caffe.py MobileNetV2-YOLOv3-Nano-voc.cfg MobileNetV2-YOLOv3-Nano-voc.weights MobileNetV2-YOLOv3-Nano-voc.prototxt MobileNetV2-YOLOv3-Nano-voc.caffemodel
-    cp MobileNetV2-YOLOv3-Nano-voc.prototxt sample
-    cp MobileNetV2-YOLOv3-Nano-voc.caffemodel sample
-    cd sample
-    python detector.py
+ 	cd darknet2caffe/
+	python darknet2caffe.py MobileNetV2-YOLOv3-Nano-voc.cfg MobileNetV2-YOLOv3-Nano-voc.weights MobileNetV2-YOLOv3-Nano-voc.prototxt MobileNetV2-YOLOv3-Nano-voc.caffemodel
+        cp MobileNetV2-YOLOv3-Nano-voc.prototxt sample
+        cp MobileNetV2-YOLOv3-Nano-voc.caffemodel sample
+        cd sample
+        python detector.py
   ```
 ### MNN conversion tutorial
 * Convert darknet model to caffemodel through darknet2caffe
 * Manually replace the upsample layer in prototxt with the interp layer
 * Take the modification of MobileNetV2-YOLOv3-Nano-voc.prototxt as an example
 ```
-#layer {
-#    bottom: "layer71-route"
-#    top: "layer72-upsample"
-#    name: "layer72-upsample"
-#    type: "Upsample"
-#    upsample_param {
-#        scale: 2
-#    }
-#}
-layer {
-    bottom: "layer71-route"
-    top: "layer72-upsample"
-    name: "layer72-upsample"
-    type: "Interp"
-    interp_param {
-        height:20 
-	      width:20
-    }
-}
+	#layer {
+	#    bottom: "layer71-route"
+	#    top: "layer72-upsample"
+	#    name: "layer72-upsample"
+	#    type: "Upsample"
+	#    upsample_param {
+	#        scale: 2
+	#    }
+	#}
+	layer {
+	    bottom: "layer71-route"
+	    top: "layer72-upsample"
+	    name: "layer72-upsample"
+	    type: "Interp"
+	    interp_param {
+		height:20 
+		      width:20
+	    }
+	}
 
 ```
 * MNN conversion: https://www.yuque.com/mnn/cn/model_convert
