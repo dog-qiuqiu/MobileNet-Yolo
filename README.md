@@ -25,7 +25,7 @@ MobileNetV2-YOLOv3-Nano|65.27|30.13|320|13 ms|5 ms|0.5BFlops|3.0MB
 ## MobileNetV2-YOLO-Fastest
 Network|Resolution|Inference time (DarkNet/i7-6700)|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|FLOPS|Weight size
 :---:|:---:|:---:|:---:|:---:|:---:|:---:
-MobileNetV2-YOLOv3-Fastest|320|28 ms|8.2 ms|3.67 ms|0.1BFlops|500KB
+MobileNetV2-YOLOv3-Fastest|320|28 ms|8.2 ms|3.67 ms|0.13BFlops|500KB
 * 快就完了，要啥mAP(VOC 33.19%AP05):sunglasses:
 ## Reference&Framework instructions&How to Train
 * https://github.com/AlexeyAB/darknet
