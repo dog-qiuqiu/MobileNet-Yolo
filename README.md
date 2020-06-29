@@ -41,7 +41,12 @@ MobileNetV2-YOLOv3-Fastest|320|& ms|& ms|& ms|0.1BFlops|500KB
 ## MobileNetV2-YOLOv3-Lite-COCO Test results
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/predictions.jpg)
 
-## DarkNet2caffe tutorial
+## DarkNet2Caffe tutorial
+### Environmental requirements
+
+* Python2.7
+* python-opencv
+* Caffe(add upsample layer https://github.com/dog-qiuqiu/caffe-upsample)
   ```
     cd darknet2caffe/
     python darknet2caffe.py MobileNetV2-YOLOv3-Nano-voc.cfg MobileNetV2-YOLOv3-Nano-voc.weights MobileNetV2-YOLOv3-Nano-voc.prototxt MobileNetV2-YOLOv3-Nano-voc.caffemodel
