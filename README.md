@@ -27,7 +27,7 @@ MobileNetV2-YOLOv3-Fastest|&|&|320|& ms|& ms|0.13BFlops|1.0MB
 * Support mobile inference frameworks such as NCNN&MNN
 ## MobileNetV2-YOLO-Fastest
 Network|Resolution|Inference time (DarkNet/i7-6700)|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)||FLOPS|Weight size
-:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
+:---:|:---:|:---:|:---:|:---:|:---:|:---:
 MobileNetV2-YOLOv3-Fastest|320|& ms|& ms|& ms|0.1BFlops|500KB
 ## Reference&Framework instructions&How to Train
 * https://github.com/AlexeyAB/darknet
