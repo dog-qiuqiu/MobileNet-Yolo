@@ -1,6 +1,5 @@
 ## 路过的大佬给颗星星吧
 ## 待办
-* 开放MNN模型转换脚本
 * 开放andooid示例项目
 ## MobileNetv2-YOLOv3-SPP Darknet 
 
