@@ -18,7 +18,6 @@ Network|VOC mAP(0.5)|COCO mAP(0.5)|Resolution|Inference time (NCNN/Kirin 990)|In
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 MobileNetV2-YOLOv3-Lite|72.61|36.57|320|33 ms|18 ms|1.8BFlops|8.0MB
 MobileNetV2-YOLOv3-Nano|65.27|30.13|320|13 ms|5 ms|0.5BFlops|3.0MB
-MobileNetV2-YOLOv3-Fastest|&|&|320|& ms|& ms|0.13BFlops|1.0MB
 [YOLOv3-Tiny-Prn](https://github.com/AlexeyAB/darknet#pre-trained-models)|&|33.1|416|44 ms|& ms|3.5BFlops|18.8MB
 [YOLO-Nano](https://github.com/liux0614/yolo_nano)|69.1|&|416|& ms|& ms|4.57BFlops|4.0MB
 * Darknet Train Configuration: CUDA-version: 10010 (10020), cuDNN: 7.6.4,OpenCV version: 4 GPU:RTX2080ti
@@ -26,7 +25,7 @@ MobileNetV2-YOLOv3-Fastest|&|&|320|& ms|& ms|0.13BFlops|1.0MB
 ## MobileNetV2-YOLO-Fastest
 Network|Resolution|Inference time (DarkNet/i7-6700)|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|FLOPS|Weight size
 :---:|:---:|:---:|:---:|:---:|:---:|:---:
-MobileNetV2-YOLOv3-Fastest|320|28 ms|3.67 ms|9.2 ms|0.1BFlops|500KB
+MobileNetV2-YOLOv3-Fastest|320|28 ms|8.2 ms|3.67 ms|0.1BFlops|500KB
 * 快就完了，要啥mAP(VOC 33.19%AP05):sunglasses:
 ## Reference&Framework instructions&How to Train
 * https://github.com/AlexeyAB/darknet
