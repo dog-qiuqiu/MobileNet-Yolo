@@ -33,7 +33,7 @@ MobileNetV2-YOLOv3-Fastest|&|&|320|& ms|& ms|0.13BFlops|1.0MB
 * MobileNetV2-YOLOv3-SPP:  Nvidia Jeston, Intel Movidius, TensorRT，NPU，OPENVINO...High-performance embedded side
 * MobileNetV2-YOLOv3-Lite: High Performance ARM-CPU，Qualcomm Adreno GPU， ARM82...High-performance mobile
 * MobileNetV2-YOLOv3-NANO： ARM-CPU...Computing resources are limited
-* MobileNetV2-YOLOv3-Fastest： ....... .......
+* MobileNetV2-YOLOv3-Fastest： ....... Can you do personal face detection???
 ## MobileNetV2-YOLOv3-Lite-COCO Test results
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/predictions.jpg)
 
