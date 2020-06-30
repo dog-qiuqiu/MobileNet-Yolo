@@ -29,7 +29,7 @@ MobileNetV2-YOLOv3-Nano|65.27|30.13|320|13 ms|5 ms|0.5BFlops|3.0MB
 ## MobileNetV2-YOLO-Fastest
 Network|Resolution|VOC mAP(0.5)|Inference time (DarkNet/i7-6700)|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|FLOPS|Weight size
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
-MobileNetV2-YOLOv3-Fastest|320|46.55|28 ms|8.2 ms|3.67 ms|0.13BFlops|700KB
+MobileNetV2-YOLOv3-Fastest|320|46.55|26 ms|8.2 ms|3.67 ms|0.13BFlops|700KB
 * 快就完了，要啥mAP:sunglasses:
 ## MobileNetV2-YOLO-Fastest Test results
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/Fastest.jpg)
