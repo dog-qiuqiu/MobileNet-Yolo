@@ -1,6 +1,7 @@
 ## 路过的大佬给颗星星吧
 ## 待办
-* 开放andooid示例项目
+* 500kb的yolo-Face-Detection
+* 开放andooid示例项目(求大佬)
 ## MobileNetv2-YOLOv3-SPP Darknet 
 
 A darknet implementation of MobileNetv2-YOLOv3-SPP detection network
