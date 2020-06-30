@@ -31,6 +31,8 @@ Network|Resolution|VOC mAP(0.5)|Inference time (DarkNet/i7-6700)|Inference time 
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 MobileNetV2-YOLOv3-Fastest|320|46.55|28 ms|8.2 ms|3.67 ms|0.13BFlops|700KB
 * 快就完了，要啥mAP:sunglasses:
+## MobileNetV2-YOLO-Fastest Test results
+![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/Fastest.jpg)
 ## Reference&Framework instructions&How to Train
 * https://github.com/AlexeyAB/darknet
 * You must use a pre-trained model to train your own data set. You can make a pre-trained model based on the weights of COCO training in this project to initialize the network parameters
