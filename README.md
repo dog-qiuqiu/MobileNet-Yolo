@@ -1,6 +1,5 @@
 ## 路过的大佬给颗星星吧
 ## 待办
-* Fastest 二次优化
 * 500kb的yolo-Face-Detection
 * 开放andooid示例项目(求大佬)
 ## MobileNetv2-YOLOv3-SPP Darknet 
