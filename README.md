@@ -31,6 +31,8 @@ Network|Resolution|VOC mAP(0.5)|Inference time (DarkNet/i7-6700)|Inference time 
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 MobileNetV2-YOLOv3-Fastest|320|46.55|26 ms|8.2 ms|3.67 ms|0.13BFlops|700KB
 * 快就完了，要啥mAP:sunglasses:
+* Suitable for hardware with extremely tight computing resources
+* This model is recommended to do some simple single object detection suitable for simple application scenarios
 ## MobileNetV2-YOLO-Fastest Test results
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/Fastest.jpg)
 ## Reference&Framework instructions&How to Train
