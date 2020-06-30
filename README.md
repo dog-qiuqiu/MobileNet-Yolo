@@ -23,6 +23,8 @@ MobileNetV2-YOLOv3-Nano|65.27|30.13|320|13 ms|5 ms|0.5BFlops|3.0MB
 [YOLO-Nano](https://github.com/liux0614/yolo_nano)|69.1|&|416|& ms|& ms|4.57BFlops|4.0MB
 * Darknet Train Configuration: CUDA-version: 10010 (10020), cuDNN: 7.6.4,OpenCV version: 4 GPU:RTX2080ti
 * Support mobile inference frameworks such as NCNN&MNN
+## MobileNetV2-YOLOv3-Lite-COCO Test results
+![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/predictions.jpg)
 ## MobileNetV2-YOLO-Fastest
 Network|Resolution|VOC mAP(0.5)|Inference time (DarkNet/i7-6700)|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|FLOPS|Weight size
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
@@ -37,9 +39,6 @@ MobileNetV2-YOLOv3-Fastest|320|46.55|28 ms|8.2 ms|3.67 ms|0.13BFlops|700KB
 * MobileNetV2-YOLOv3-Lite: High Performance ARM-CPU，Qualcomm Adreno GPU， ARM82...High-performance mobile
 * MobileNetV2-YOLOv3-NANO： ARM-CPU...Computing resources are limited
 * MobileNetV2-YOLOv3-Fastest： ....... Can you do personal face detection???It’s better than nothing
-## MobileNetV2-YOLOv3-Lite-COCO Test results
-![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/predictions.jpg)
-
 ## DarkNet2Caffe tutorial
 ### Environmental requirements
 
