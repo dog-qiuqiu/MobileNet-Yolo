@@ -50,7 +50,8 @@ MobileNetV2-YOLOv3-Fastest|320|46.55|26 ms|8.2 ms|2.4 ms|0.13BFlops|700KB
 
 * Python2.7
 * python-opencv
-* Caffe(add upsample layer https://github.com/dog-qiuqiu/caffe-upsample)You have to compile cpu version of caffe！！！
+* Caffe(add upsample layer https://github.com/dog-qiuqiu/caffe-upsample)
+* You have to compile cpu version of caffe！！！
   ```
 	cd darknet2caffe/
 	python darknet2caffe.py MobileNetV2-YOLOv3-Nano-voc.cfg MobileNetV2-YOLOv3-Nano-voc.weights MobileNetV2-YOLOv3-Nano-voc.prototxt MobileNetV2-YOLOv3-Nano-voc.caffemodel
@@ -87,6 +88,7 @@ MobileNetV2-YOLOv3-Fastest|320|46.55|26 ms|8.2 ms|2.4 ms|0.13BFlops|700KB
 ```
 * MNN conversion: https://www.yuque.com/mnn/cn/model_convert
 ## NCNN conversion tutorial
+* NCNN supports direct conversion of darknet models
 * benchmark:https://github.com/Tencent/ncnn/tree/master/benchmark
 * darknet2ncnn: https://github.com/Tencent/ncnn/tree/master/tools/darknet
 ## NCNN Android Sample
