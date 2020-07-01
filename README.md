@@ -50,7 +50,7 @@ MobileNetV2-YOLOv3-Fastest|320|46.55|26 ms|8.2 ms|2.4 ms|0.13BFlops|700KB
 
 * Python2.7
 * python-opencv
-* Caffe(add upsample layer https://github.com/dog-qiuqiu/caffe-upsample)
+* Caffe(add upsample layer https://github.com/dog-qiuqiu/caffe-upsample)You have to compile cpu version of caffe！！！
   ```
 	cd darknet2caffe/
 	python darknet2caffe.py MobileNetV2-YOLOv3-Nano-voc.cfg MobileNetV2-YOLOv3-Nano-voc.weights MobileNetV2-YOLOv3-Nano-voc.prototxt MobileNetV2-YOLOv3-Nano-voc.caffemodel
