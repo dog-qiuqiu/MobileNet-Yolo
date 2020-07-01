@@ -1,7 +1,6 @@
 ## 路过的大佬给颗星星吧
 ## 待办
-* 测试CspNet，不好使…不用了
-* 500kb的yolo-Face-Detection
+* 500kb的yolo-Face-Detection 7月15日？？？
 * 开放andooid示例项目(求大佬)
 ## MobileNetv2-YOLOv3-SPP Darknet 
 
