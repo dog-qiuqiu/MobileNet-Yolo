@@ -1,6 +1,6 @@
 ## 路过的大佬给颗星星吧
 ## 待办
-* 500kb的yolo-Face-Detection 7月15日？？？
+* 500kb的yolo-Face-Detection:https://github.com/dog-qiuqiu/yoloface-500k
 * 开放andooid示例项目(求大佬)
 ## MobileNetv2-YOLOv3-SPP Darknet 
 
