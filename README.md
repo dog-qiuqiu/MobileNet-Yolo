@@ -37,7 +37,8 @@ MobileNetV2-YOLOv3-Fastest|320|46.55|26 ms|8.2 ms|2.4 ms|0.13BFlops|700KB
 ## 500kb的yolo-Face-Detection
 Network|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|FLOPS|Weight size
 :---:|:---:|:---:|:---:|:---:|:---:
-UltraFace-version-RFB|320x240|&ms|3.36ms|0.1BFlops|1.2MB
+UltraFace-version-RFB|320x240|&ms|3.36ms|0.1BFlops|1.3MB
+UltraFace-version-Slim|320x240|&ms|3.06ms|0.1BFlops|1.2MB
 yoloface-500k|320x320|&ms|2.3ms|0.1BFlops|0.5MB
 ## Reference&Framework instructions&How to Train
 * https://github.com/AlexeyAB/darknet
