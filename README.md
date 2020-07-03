@@ -1,6 +1,5 @@
 ## 路过的大佬给颗星星吧
 ## 待办
-* 500kb的yolo-Face-Detection:https://github.com/dog-qiuqiu/yoloface-500k
 * 开放andooid示例项目(求大佬)
 ## MobileNetv2-YOLOv3-SPP Darknet 
 
@@ -35,6 +34,7 @@ MobileNetV2-YOLOv3-Fastest|320|46.55|26 ms|8.2 ms|2.4 ms|0.13BFlops|700KB
 * This model is recommended to do some simple single object detection suitable for simple application scenarios
 ## MobileNetV2-YOLO-Fastest Test results
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/Fastest.jpg)
+## 500kb的yolo-Face-Detection
 ## Reference&Framework instructions&How to Train
 * https://github.com/AlexeyAB/darknet
 * You must use a pre-trained model to train your own data set. You can make a pre-trained model based on the weights of COCO training in this project to initialize the network parameters
