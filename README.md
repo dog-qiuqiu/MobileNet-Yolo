@@ -35,6 +35,10 @@ MobileNetV2-YOLOv3-Fastest|320|46.55|26 ms|8.2 ms|2.4 ms|0.13BFlops|700KB
 ## MobileNetV2-YOLO-Fastest Test results
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/Fastest.jpg)
 ## 500kb的yolo-Face-Detection
+Network|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|FLOPS|Weight size
+:---:|:---:|:---:|:---:|:---:|:---:
+UltraFace-version-RFB|320x240|&ms|3.36ms|~100 MFlops|1.2MB
+yoloface-500k|320x320|&ms|2.3ms|~100 MFlops|0.5MB
 ## Reference&Framework instructions&How to Train
 * https://github.com/AlexeyAB/darknet
 * You must use a pre-trained model to train your own data set. You can make a pre-trained model based on the weights of COCO training in this project to initialize the network parameters
