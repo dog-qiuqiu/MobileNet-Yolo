@@ -85,8 +85,8 @@ yoloface-500k|320x256|&ms|2.2ms|0.089BFlops|0.474MB
 	    name: "layer72-upsample"
 	    type: "Interp"
 	    interp_param {
-		height:20 
-		      width:20
+		height:20  #upsample h size
+		width:20   #upsample w size
 	    }
 	}
 
