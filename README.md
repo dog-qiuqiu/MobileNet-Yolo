@@ -39,7 +39,7 @@ Network|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kir
 :---:|:---:|:---:|:---:|:---:|:---:
 UltraFace-version-RFB|320x240|&ms|3.36ms|0.1BFlops|1.3MB
 UltraFace-version-Slim|320x240|&ms|3.06ms|0.1BFlops|1.2MB
-yoloface-500k|320x256|&ms|2.2ms|0.089BFlops|0.5MB
+yoloface-500k|320x256|&ms|2.2ms|0.089BFlops|0.474MB
 ## Reference&Framework instructions&How to Train
 * https://github.com/AlexeyAB/darknet
 * You must use a pre-trained model to train your own data set. You can make a pre-trained model based on the weights of COCO training in this project to initialize the network parameters
