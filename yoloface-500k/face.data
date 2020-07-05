@@ -1,0 +1,6 @@
+classes= 1
+train  = /WIDER_FACE/train.txt
+valid  = /WIDER_FACE/val.txt
+names = label.names
+backup = /model
+
