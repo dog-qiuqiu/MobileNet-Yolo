@@ -20,8 +20,10 @@ Network|VOC mAP(0.5)|COCO mAP(0.5)|Resolution|Inference time (NCNN/Kirin 990)|In
 [MobileNetV2-YOLOv3-Nano](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/MobileNetV2-YOLOv3-Nano)|65.27|30.13|320|13 ms|5 ms|0.5BFlops|3.0MB
 [YOLOv3-Tiny-Prn](https://github.com/AlexeyAB/darknet#pre-trained-models)|&|33.1|416|36.6 ms|& ms|3.5BFlops|18.8MB
 [YOLO-Nano](https://github.com/liux0614/yolo_nano)|69.1|&|416|& ms|& ms|4.57BFlops|4.0MB
-* Darknet Train Configuration: CUDA-version: 10010 (10020), cuDNN: 7.6.4,OpenCV version: 4 GPU:RTX2080ti
 * Support mobile inference frameworks such as NCNN&MNN
+* The mnn benchmark only includes the forward inference time
+* The ncnn benchmark is the forward inference time + post-processing time(NMS...) of the convolution feature map. 
+* Darknet Train Configuration: CUDA-version: 10010 (10020), cuDNN: 7.6.4,OpenCV version: 4 GPU:RTX2080ti
 ## MobileNetV2-YOLOv3-Lite-COCO Test results
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/predictions.jpg)
 ## MobileNetV2-YOLO-Fastest
@@ -30,6 +32,8 @@ Network|Resolution|VOC mAP(0.5)|Inference time (DarkNet/i7-6700)|Inference time 
 [MobileNetV2-YOLOv3-Fastest](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/MobileNetV2-YOLO-Fastest)|320|46.55|26 ms|8.2 ms|2.4 ms|0.13BFlops|700KB
 * 都2.4ms的，要啥mAP:sunglasses:
 * Suitable for hardware with extremely tight computing resources
+* The mnn benchmark only includes the forward inference time
+* The ncnn benchmark is the forward inference time + post-processing time(NMS...) of the convolution feature map. 
 * This model is recommended to do some simple single object detection suitable for simple application scenarios
 ## MobileNetV2-YOLO-Fastest Test results
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/Fastest.jpg)
@@ -40,6 +44,8 @@ UltraFace-version-RFB|320x240|&ms|3.36ms|0.1BFlops|1.3MB
 UltraFace-version-Slim|320x240|&ms|3.06ms|0.1BFlops|1.2MB
 [yoloface-500k](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k)|320x256|6ms|2.4ms|0.1BFlops|0.5MB
 *  都500k，要啥mAP:sunglasses:
+* The mnn benchmark only includes the forward inference time
+* The ncnn benchmark is the forward inference time + post-processing time(NMS...) of the convolution feature map. 
 ## YoloFace-500k Test results
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/p1.jpg)
 ## Reference&Framework instructions&How to Train
