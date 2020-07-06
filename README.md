@@ -28,7 +28,7 @@ Network|VOC mAP(0.5)|COCO mAP(0.5)|Resolution|Inference time (NCNN/Kirin 990)|In
 Network|Resolution|VOC mAP(0.5)|Inference time (DarkNet/i7-6700)|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|FLOPS|Weight size
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 [MobileNetV2-YOLOv3-Fastest](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/MobileNetV2-YOLO-Fastest)|320|46.55|26 ms|8.2 ms|2.4 ms|0.13BFlops|700KB
-* 快就完了，要啥mAP:sunglasses:
+* 都2.4ms的，要啥mAP:sunglasses:
 * Suitable for hardware with extremely tight computing resources
 * This model is recommended to do some simple single object detection suitable for simple application scenarios
 ## MobileNetV2-YOLO-Fastest Test results
@@ -39,6 +39,7 @@ Network|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kir
 UltraFace-version-RFB|320x240|&ms|3.36ms|0.1BFlops|1.3MB
 UltraFace-version-Slim|320x240|&ms|3.06ms|0.1BFlops|1.2MB
 [yoloface-500k](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k)|320x256|&ms|2.4ms|0.1BFlops|0.5MB
+*  都500k，要啥mAP:sunglasses:
 ## YoloFace-500k Test results
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/p1.jpg)
 ## Reference&Framework instructions&How to Train
