@@ -43,7 +43,7 @@ Network|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kir
 UltraFace-version-RFB|320x240|&ms|3.36ms|0.1BFlops|1.3MB
 UltraFace-version-Slim|320x240|&ms|3.06ms|0.1BFlops|1.2MB
 [yoloface-500k](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k)|320x256|5.5ms|2.4ms|0.1BFlops|0.5MB
-* 都500k，要啥mAP:sunglasses:
+* 都500k，要啥mAP:sunglasses:（widerface val：53%，easy，medium，hard分别待测
 * Inference time (DarkNet/i7-6700):13ms
 * The mnn benchmark only includes the forward inference time
 * The ncnn benchmark is the forward inference time + post-processing time(NMS...) of the convolution feature map. 
