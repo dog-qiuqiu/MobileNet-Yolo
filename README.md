@@ -47,6 +47,15 @@ UltraFace-version-Slim|320x240|&ms|3.06ms|0.1BFlops|1.2MB
 * Inference time (DarkNet/i7-6700):13ms
 * The mnn benchmark only includes the forward inference time
 * The ncnn benchmark is the forward inference time + post-processing time(NMS...) of the convolution feature map. 
+## Wider Face Val
+Model|Easy Set|Medium Set|Hard Set
+------|--------|----------|--------
+libfacedetection v1（caffe）|0.65 |0.5       |0.233
+libfacedetection v2（caffe）|0.714 |0.585       |0.306
+Retinaface-Mobilenet-0.25 (Mxnet)   |0.745|0.553|0.232
+version-slim-320|0.77     |0.671       |0.395
+version-RFB-320|0.787     |0.698       |0.438
+[yoloface-500k-320](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k)|**0.728**|**0.682**|**0.431**|
 ## YoloFace-500k Test results
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/p1.jpg)
 ## Reference&Framework instructions&How to Train
