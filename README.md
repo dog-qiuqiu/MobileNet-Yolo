@@ -118,8 +118,8 @@ version-RFB-320|0.787     |0.698       |0.438
 * https://github.com/dog-qiuqiu/Android_MobileNetV2-YOLOV3-Nano-NCNN
 * APK:https://github.com/dog-qiuqiu/Android_MobileNetV2-YOLOV3-Nano-NCNN/blob/master/app/release/MobileNetv2-yolov3-nano.apk
 ## Thanks
-* https://github.com/WZTENG/YOLOv5_NCNN 感谢大佬sample
 * https://github.com/shicai/MobileNet-Caffe
+* https://github.com/WZTENG/YOLOv5_NCNN 
 * https://github.com/AlexeyAB/darknet
 * https://github.com/Tencent/ncnn
 * https://gluon-cv.mxnet.io/
