@@ -116,6 +116,7 @@ version-RFB-320|0.787     |0.698       |0.438
 * darknet2ncnn: https://github.com/Tencent/ncnn/tree/master/tools/darknet
 ## NCNN Android Sample
 * https://github.com/dog-qiuqiu/Android_MobileNetV2-YOLOV3-Nano-NCNN
+* APK:https://github.com/dog-qiuqiu/Android_MobileNetV2-YOLOV3-Nano-NCNN/blob/master/app/release/MobileNetv2-yolov3-nano.apk
 ## Thanks
 * https://github.com/WZTENG/YOLOv5_NCNN 感谢大佬sample
 * https://github.com/shicai/MobileNet-Caffe
