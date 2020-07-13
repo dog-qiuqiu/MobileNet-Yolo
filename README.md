@@ -72,6 +72,8 @@ version-RFB-320|0.787     |0.698       |0.438
 * Benchmark:https://github.com/Tencent/ncnn/tree/master/benchmark
 * NCNN supports direct conversion of darknet models
 * darknet2ncnn: https://github.com/Tencent/ncnn/tree/master/tools/darknet
+## NCNN C++ Sample
+* https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/sample/ncnn
 ## NCNN Android Sample
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/MobileNetV2-YOLOV3-Nano.gif)
 * https://github.com/dog-qiuqiu/Android_MobileNetV2-YOLOV3-Nano-NCNN
