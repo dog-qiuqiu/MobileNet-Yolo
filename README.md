@@ -68,6 +68,14 @@ version-RFB-320|0.787     |0.698       |0.438
 * MobileNetV2-YOLOv3-Lite: High Performance ARM-CPU，Qualcomm Adreno GPU， ARM82...High-performance mobile
 * MobileNetV2-YOLOv3-NANO： ARM-CPU...Computing resources are limited
 * MobileNetV2-YOLOv3-Fastest： ....... Can you do personal face detection???It’s better than nothing
+## NCNN conversion tutorial
+* Benchmark:https://github.com/Tencent/ncnn/tree/master/benchmark
+* NCNN supports direct conversion of darknet models
+* darknet2ncnn: https://github.com/Tencent/ncnn/tree/master/tools/darknet
+## NCNN Android Sample
+![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/MobileNetV2-YOLOV3-Nano.gif)
+* https://github.com/dog-qiuqiu/Android_MobileNetV2-YOLOV3-Nano-NCNN
+* APK:https://github.com/dog-qiuqiu/Android_MobileNetV2-YOLOV3-Nano-NCNN/blob/master/app/release/MobileNetv2-yolov3-nano.apk
 ## DarkNet2Caffe tutorial
 ### Environmental requirements
 
@@ -111,14 +119,6 @@ version-RFB-320|0.787     |0.698       |0.438
 
 ```
 * MNN conversion: https://www.yuque.com/mnn/cn/model_convert
-## NCNN conversion tutorial
-* Benchmark:https://github.com/Tencent/ncnn/tree/master/benchmark
-* NCNN supports direct conversion of darknet models
-* darknet2ncnn: https://github.com/Tencent/ncnn/tree/master/tools/darknet
-## NCNN Android Sample
-![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/MobileNetV2-YOLOV3-Nano.gif)
-* https://github.com/dog-qiuqiu/Android_MobileNetV2-YOLOV3-Nano-NCNN
-* APK:https://github.com/dog-qiuqiu/Android_MobileNetV2-YOLOV3-Nano-NCNN/blob/master/app/release/MobileNetv2-yolov3-nano.apk
 ## Thanks
 * https://github.com/shicai/MobileNet-Caffe
 * https://github.com/WZTENG/YOLOv5_NCNN 
