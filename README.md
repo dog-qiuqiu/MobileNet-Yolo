@@ -1,5 +1,5 @@
 ## Road Map
-* 优化yoloface-500k，在不增加计算量参数量前提下widerface指标全面超越Ultra-face（+当前对大尺度人脸检测不佳（7月13日已解决））
+* 优化yoloface-500k，在不增加计算量参数量前提下widerface指标全面超越Ultra-face（+当前对大尺度人脸检测不佳）
 * 基于双金字塔结构改善不同尺度特征图融合，添加cspnet，进一步提升性能，模型开发优先级：Nano》Fastest》Lite
 ## MobileNetv2-YOLOv3-SPP Darknet 
 
@@ -56,7 +56,7 @@ libfacedetection v2（caffe）|0.714 |0.585       |0.306
 Retinaface-Mobilenet-0.25 (Mxnet)   |0.745|0.553|0.232
 version-slim-320|0.77     |0.671       |0.395
 version-RFB-320|0.787     |0.698       |0.438
-[yoloface-500k-320](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k)|**0.785**|**0.696**|**0.435**|
+[yoloface-500k-320](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k)|**0.728**|**0.682**|**0.431**|
 ## YoloFace-500k Test results
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/p1.jpg)
 ## Reference&Framework instructions&How to Train
