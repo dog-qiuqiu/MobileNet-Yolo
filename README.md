@@ -62,8 +62,10 @@ version-RFB-320|0.787     |0.698       |0.438
 [yoloface-500k-320-v2](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k)|**0.745**|**0.691**|**0.468**|
 * yoloface-500k-SE：The SE&CSP module is added after the FPN feature map splicing
 * wider_face_val(ap05): yoloface-500k: 53.75 yoloface-500k-v2: 54.31
-## YoloFace-500k Test results
+## YoloFace-500k Test results(thresh 0.7)
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/p1.jpg)
+## YoloFace-500k-v2 Test results(thresh 0.7)
+![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/f2.jpg)
 ## Reference&Framework instructions&How to Train
 * https://github.com/AlexeyAB/darknet
 * You must use a pre-trained model to train your own data set. You can make a pre-trained model based on the weights of COCO training in this project to initialize the network parameters
