@@ -59,6 +59,7 @@ version-slim-320|0.77     |0.671       |0.395
 version-RFB-320|0.787     |0.698       |0.438
 [yoloface-500k-320](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k)|**0.728**|**0.682**|**0.431**|
 [yoloface-500k-320-SE](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k)|**0.736**|**0.698**|**0.466**|
+* yoloface-500k-SE：The SE module is added after the FPN feature map splicing
 ## YoloFace-500k Test results
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/p1.jpg)
 ## Reference&Framework instructions&How to Train
