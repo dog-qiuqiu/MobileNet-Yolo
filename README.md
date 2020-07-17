@@ -45,7 +45,7 @@ Network|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kir
 UltraFace-version-RFB|320x240|&ms|3.36ms|0.1BFlops|1.3MB
 UltraFace-version-Slim|320x240|&ms|3.06ms|0.1BFlops|1.2MB
 [yoloface-500k](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k)|320x256|5.5ms|2.4ms|0.1BFlops|0.52MB
-[yoloface-500k-v2](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k)|320x256|4.7ms|2.0ms|0.1BFlops|0.42MB
+[yoloface-500k-v2](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k)|352x288|4.7ms|2.0ms|0.1BFlops|0.42MB
 * 都500k了，要啥mAP:sunglasses:
 * Inference time (DarkNet/i7-6700):13ms
 * The mnn benchmark only includes the forward inference time
@@ -59,7 +59,7 @@ Retinaface-Mobilenet-0.25 (Mxnet)   |0.745|0.553|0.232
 version-slim-320|0.77     |0.671       |0.395
 version-RFB-320|0.787     |0.698       |0.438
 [yoloface-500k-320](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k)|**0.728**|**0.682**|**0.431**|
-[yoloface-500k-320-v2](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k)|**0.745**|**0.691**|**0.468**|
+[yoloface-500k-352-v2](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k)|**0.753**|**0.716**|**0.470**|
 * yoloface-500k-v2：The SE&CSP module is added after the FPN feature map splicing
 * wider_face_val(ap05): yoloface-500k: 53.75 yoloface-500k-v2: 54.31
 ## YoloFace-500k Test results(thresh 0.7)
