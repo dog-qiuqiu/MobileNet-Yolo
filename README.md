@@ -30,7 +30,8 @@ Network|VOC mAP(0.5)|COCO mAP(0.5)|Resolution|Inference time (NCNN/Kirin 990)|In
 ## MobileNetV2-YOLO-Fastest
 Network|Resolution|VOC mAP(0.5)|Inference time (DarkNet/i7-6700)|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|FLOPS|Weight size
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
-[MobileNetV2-YOLOv3-Fastest](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/MobileNetV2-YOLO-Fastest)|320|46.55|26 ms|8.2 ms|2.4 ms|0.13BFlops|700KB
+[MobileNetV2-YOLOv3-Fastest](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/MobileNetV2-YOLO-Fastest/v1)|320|46.55|26 ms|8.2 ms|2.4 ms|0.13BFlops|700KB
+[MobileNetV2-YOLOv3-Fastest-v2](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/MobileNetV2-YOLO-Fastest/v2)|320|50.13|27 ms|& ms|& ms|0.14BFlops|820KB
 * 都2.4ms了，要啥mAP:sunglasses:
 * Suitable for hardware with extremely tight computing resources
 * The mnn benchmark only includes the forward inference time
