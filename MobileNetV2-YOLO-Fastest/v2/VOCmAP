@@ -1,0 +1,134 @@
+ OpenCV version: 4.9.1
+ 0 : compute_capability = 750, cudnn_half = 1, GPU: GeForce RTX 2080 Ti 
+net.optimized_memory = 0 
+mini_batch = 1, batch = 2, time_steps = 1, train = 0 
+   layer   filters  size/strd(dil)      input                output
+   0 conv      8       3 x 3/ 2    320 x 320 x   3 ->  160 x 160 x   8 0.011 BF
+   1 conv      8/   8  3 x 3/ 1    160 x 160 x   8 ->  160 x 160 x   8 0.004 BF
+   2 conv      4       1 x 1/ 1    160 x 160 x   8 ->  160 x 160 x   4 0.002 BF
+   3 conv     18       1 x 1/ 1    160 x 160 x   4 ->  160 x 160 x  18 0.004 BF
+   4 conv     18/  18  3 x 3/ 2    160 x 160 x  18 ->   80 x  80 x  18 0.002 BF
+   5 conv      6       1 x 1/ 1     80 x  80 x  18 ->   80 x  80 x   6 0.001 BF
+   6 conv     36       1 x 1/ 1     80 x  80 x   6 ->   80 x  80 x  36 0.003 BF
+   7 conv     36/  36  3 x 3/ 1     80 x  80 x  36 ->   80 x  80 x  36 0.004 BF
+   8 conv      6       1 x 1/ 1     80 x  80 x  36 ->   80 x  80 x   6 0.003 BF
+   9 Shortcut Layer: 5,  wt = 0, wn = 0, outputs:  80 x  80 x   6 0.000 BF
+  10 conv     18       1 x 1/ 1     80 x  80 x   6 ->   80 x  80 x  18 0.001 BF
+  11 route  3 		                           ->  160 x 160 x  18 
+  12 max                2x 2/ 2    160 x 160 x  18 ->   80 x  80 x  18 0.000 BF
+  13 route  12 10 	                           ->   80 x  80 x  36 
+  14 conv     24       1 x 1/ 1     80 x  80 x  36 ->   80 x  80 x  24 0.011 BF
+  15 conv     24/  24  3 x 3/ 2     80 x  80 x  24 ->   40 x  40 x  24 0.001 BF
+  16 conv      8       1 x 1/ 1     40 x  40 x  24 ->   40 x  40 x   8 0.001 BF
+  17 conv     48       1 x 1/ 1     40 x  40 x   8 ->   40 x  40 x  48 0.001 BF
+  18 conv     48/  48  3 x 3/ 1     40 x  40 x  48 ->   40 x  40 x  48 0.001 BF
+  19 conv      8       1 x 1/ 1     40 x  40 x  48 ->   40 x  40 x   8 0.001 BF
+  20 Shortcut Layer: 16,  wt = 0, wn = 0, outputs:  40 x  40 x   8 0.000 BF
+  21 conv     48       1 x 1/ 1     40 x  40 x   8 ->   40 x  40 x  48 0.001 BF
+  22 conv     48/  48  3 x 3/ 1     40 x  40 x  48 ->   40 x  40 x  48 0.001 BF
+  23 conv      8       1 x 1/ 1     40 x  40 x  48 ->   40 x  40 x   8 0.001 BF
+  24 Shortcut Layer: 20,  wt = 0, wn = 0, outputs:  40 x  40 x   8 0.000 BF
+  25 conv     24       1 x 1/ 1     40 x  40 x   8 ->   40 x  40 x  24 0.001 BF
+  26 route  14 		                           ->   80 x  80 x  24 
+  27 max                2x 2/ 2     80 x  80 x  24 ->   40 x  40 x  24 0.000 BF
+  28 route  27 25 	                           ->   40 x  40 x  48 
+  29 conv     48       1 x 1/ 1     40 x  40 x  48 ->   40 x  40 x  48 0.007 BF
+  30 conv     48/  48  3 x 3/ 2     40 x  40 x  48 ->   20 x  20 x  48 0.000 BF
+  31 conv     16       1 x 1/ 1     20 x  20 x  48 ->   20 x  20 x  16 0.001 BF
+  32 conv     96       1 x 1/ 1     20 x  20 x  16 ->   20 x  20 x  96 0.001 BF
+  33 conv     96/  96  3 x 3/ 1     20 x  20 x  96 ->   20 x  20 x  96 0.001 BF
+  34 conv     16       1 x 1/ 1     20 x  20 x  96 ->   20 x  20 x  16 0.001 BF
+  35 Shortcut Layer: 31,  wt = 0, wn = 0, outputs:  20 x  20 x  16 0.000 BF
+  36 conv     96       1 x 1/ 1     20 x  20 x  16 ->   20 x  20 x  96 0.001 BF
+  37 conv     96/  96  3 x 3/ 1     20 x  20 x  96 ->   20 x  20 x  96 0.001 BF
+  38 conv     16       1 x 1/ 1     20 x  20 x  96 ->   20 x  20 x  16 0.001 BF
+  39 Shortcut Layer: 35,  wt = 0, wn = 0, outputs:  20 x  20 x  16 0.000 BF
+  40 conv     96       1 x 1/ 1     20 x  20 x  16 ->   20 x  20 x  96 0.001 BF
+  41 conv     96/  96  3 x 3/ 1     20 x  20 x  96 ->   20 x  20 x  96 0.001 BF
+  42 conv     16       1 x 1/ 1     20 x  20 x  96 ->   20 x  20 x  16 0.001 BF
+  43 Shortcut Layer: 39,  wt = 0, wn = 0, outputs:  20 x  20 x  16 0.000 BF
+  44 conv     48       1 x 1/ 1     20 x  20 x  16 ->   20 x  20 x  48 0.001 BF
+  45 route  29 		                           ->   40 x  40 x  48 
+  46 max                2x 2/ 2     40 x  40 x  48 ->   20 x  20 x  48 0.000 BF
+  47 route  46 44 	                           ->   20 x  20 x  96 
+  48 conv     96       1 x 1/ 1     20 x  20 x  96 ->   20 x  20 x  96 0.007 BF
+  49 conv     96/  96  3 x 3/ 2     20 x  20 x  96 ->   10 x  10 x  96 0.000 BF
+  50 conv     24       1 x 1/ 1     10 x  10 x  96 ->   10 x  10 x  24 0.000 BF
+  51 conv    144       1 x 1/ 1     10 x  10 x  24 ->   10 x  10 x 144 0.001 BF
+  52 conv    144/ 144  3 x 3/ 1     10 x  10 x 144 ->   10 x  10 x 144 0.000 BF
+  53 conv     24       1 x 1/ 1     10 x  10 x 144 ->   10 x  10 x  24 0.001 BF
+  54 Shortcut Layer: 50,  wt = 0, wn = 0, outputs:  10 x  10 x  24 0.000 BF
+  55 conv    144       1 x 1/ 1     10 x  10 x  24 ->   10 x  10 x 144 0.001 BF
+  56 conv    144/ 144  3 x 3/ 1     10 x  10 x 144 ->   10 x  10 x 144 0.000 BF
+  57 conv     24       1 x 1/ 1     10 x  10 x 144 ->   10 x  10 x  24 0.001 BF
+  58 Shortcut Layer: 54,  wt = 0, wn = 0, outputs:  10 x  10 x  24 0.000 BF
+  59 conv     96       1 x 1/ 1     10 x  10 x  24 ->   10 x  10 x  96 0.000 BF
+  60 route  48 		                           ->   20 x  20 x  96 
+  61 max                2x 2/ 2     20 x  20 x  96 ->   10 x  10 x  96 0.000 BF
+  62 route  61 59 	                           ->   10 x  10 x 192 
+  63 conv     72       1 x 1/ 1     10 x  10 x 192 ->   10 x  10 x  72 0.003 BF
+  64 avg                            10 x  10 x  72 ->     72
+  65 conv     36       1 x 1/ 1      1 x   1 x  72 ->    1 x   1 x  36 0.000 BF
+  66 conv     72       1 x 1/ 1      1 x   1 x  36 ->    1 x   1 x  72 0.000 BF
+  67 scale Layer: 63
+  68 conv     72/  72  3 x 3/ 1     10 x  10 x  72 ->   10 x  10 x  72 0.000 BF
+  69 conv    144       1 x 1/ 1     10 x  10 x  72 ->   10 x  10 x 144 0.002 BF
+  70 conv    144/ 144  3 x 3/ 1     10 x  10 x 144 ->   10 x  10 x 144 0.000 BF
+  71 conv    288       1 x 1/ 1     10 x  10 x 144 ->   10 x  10 x 288 0.008 BF
+  72 conv     75       1 x 1/ 1     10 x  10 x 288 ->   10 x  10 x  75 0.004 BF
+  73 yolo
+[yolo] params: iou loss: ciou (4), iou_norm: 0.07, cls_norm: 1.00, scale_x_y: 1.10
+nms_kind: greedynms (1), beta = 0.600000 
+  74 route  63 		                           ->   10 x  10 x  72 
+  75 upsample                 2x    10 x  10 x  72 ->   20 x  20 x  72
+  76 route  75 48 	                           ->   20 x  20 x 168 
+  77 conv     48       1 x 1/ 1     20 x  20 x 168 ->   20 x  20 x  48 0.006 BF
+  78 avg                            20 x  20 x  48 ->     48
+  79 conv     24       1 x 1/ 1      1 x   1 x  48 ->    1 x   1 x  24 0.000 BF
+  80 conv     48       1 x 1/ 1      1 x   1 x  24 ->    1 x   1 x  48 0.000 BF
+  81 scale Layer: 77
+  82 conv     48/  48  3 x 3/ 1     20 x  20 x  48 ->   20 x  20 x  48 0.000 BF
+  83 conv     96       1 x 1/ 1     20 x  20 x  48 ->   20 x  20 x  96 0.004 BF
+  84 conv     96/  96  3 x 3/ 1     20 x  20 x  96 ->   20 x  20 x  96 0.001 BF
+  85 conv    192       1 x 1/ 1     20 x  20 x  96 ->   20 x  20 x 192 0.015 BF
+  86 conv     75       1 x 1/ 1     20 x  20 x 192 ->   20 x  20 x  75 0.012 BF
+  87 yolo
+[yolo] params: iou loss: ciou (4), iou_norm: 0.07, cls_norm: 1.00, scale_x_y: 1.05
+nms_kind: greedynms (1), beta = 0.600000 
+Total BFLOPS 0.142 
+avg_outputs = 56311 
+ Allocate additional workspace_size = 2.20 MB 
+Loading weights from model/MobileNetV2-YOLO-Fastest-voc-v2_best.weights...
+ seen 64, trained: 7323 K-images (114 Kilo-batches_64) 
+Done! Loaded 88 layers from weights-file 
+
+ calculation mAP (mean average precision)...
+4952
+ detections_count = 157384, unique_truth_count = 12032  
+class_id = 0, name = aeroplane, ap = 55.66%   	 (TP = 150, FP = 101) 
+class_id = 1, name = bicycle, ap = 63.64%   	 (TP = 189, FP = 150) 
+class_id = 2, name = bird, ap = 38.46%   	 (TP = 165, FP = 178) 
+class_id = 3, name = boat, ap = 32.34%   	 (TP = 94, FP = 136) 
+class_id = 4, name = bottle, ap = 15.24%   	 (TP = 84, FP = 148) 
+class_id = 5, name = bus, ap = 66.69%   	 (TP = 136, FP = 90) 
+class_id = 6, name = car, ap = 66.58%   	 (TP = 739, FP = 348) 
+class_id = 7, name = cat, ap = 60.75%   	 (TP = 209, FP = 166) 
+class_id = 8, name = chair, ap = 27.12%   	 (TP = 204, FP = 373) 
+class_id = 9, name = cow, ap = 47.48%   	 (TP = 121, FP = 134) 
+class_id = 10, name = diningtable, ap = 50.77%   	 (TP = 107, FP = 109) 
+class_id = 11, name = dog, ap = 52.43%   	 (TP = 272, FP = 302) 
+class_id = 12, name = horse, ap = 69.71%   	 (TP = 228, FP = 220) 
+class_id = 13, name = motorbike, ap = 65.93%   	 (TP = 195, FP = 211) 
+class_id = 14, name = person, ap = 60.19%   	 (TP = 2527, FP = 1380) 
+class_id = 15, name = pottedplant, ap = 16.18%   	 (TP = 65, FP = 87) 
+class_id = 16, name = sheep, ap = 47.89%   	 (TP = 126, FP = 182) 
+class_id = 17, name = sofa, ap = 50.74%   	 (TP = 120, FP = 142) 
+class_id = 18, name = train, ap = 66.20%   	 (TP = 175, FP = 108) 
+class_id = 19, name = tvmonitor, ap = 48.56%   	 (TP = 153, FP = 132) 
+
+ for conf_thresh = 0.25, precision = 0.56, recall = 0.50, F1-score = 0.53 
+ for conf_thresh = 0.25, TP = 6059, FP = 4697, FN = 5973, average IoU = 40.67 % 
+
+ IoU threshold = 50 %, used Area-Under-Curve for each unique Recall 
+ mean average precision (mAP@0.50) = 0.501281, or 50.13 % 
+Total Detection Time: 17 Seconds
