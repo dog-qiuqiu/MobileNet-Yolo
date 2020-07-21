@@ -33,6 +33,7 @@ Network|Resolution|VOC mAP(0.5)|Inference time (DarkNet/i7-6700)|Inference time 
 [MobileNetV2-YOLOv3-Fastest](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/MobileNetV2-YOLO-Fastest/v1)|320|46.55|26 ms|8.2 ms|2.4 ms|0.13BFlops|700KB
 [MobileNetV2-YOLOv3-Fastest-v2](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/MobileNetV2-YOLO-Fastest/v2)|320|50.13|27 ms|& ms|& ms|0.14BFlops|820KB
 * 都2.4ms了，要啥mAP:sunglasses:
+* V2 does not support MNN temporarily
 * Suitable for hardware with extremely tight computing resources
 * The mnn benchmark only includes the forward inference time
 * The ncnn benchmark is the forward inference time + post-processing time(NMS...) of the convolution feature map. 
@@ -60,7 +61,8 @@ version-slim-320|0.77     |0.671       |0.395
 version-RFB-320|0.787     |0.698       |0.438
 [yoloface-500k-320](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k/v1)|**0.728**|**0.682**|**0.431**|
 [yoloface-500k-352-v2](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k/v2)|**0.768**|**0.729**|**0.490**|
-* yoloface-500k-v2：The SE&CSP module is added after the FPN feature map splicing
+* yoloface-500k-v2：The SE&CSP module is added
+* V2 does not support MNN temporarily
 * wider_face_val(ap05): yoloface-500k: 53.75 yoloface-500k-v2: 56.69
 ## YoloFace-500k Test results(thresh 0.7)
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/p1.jpg)
