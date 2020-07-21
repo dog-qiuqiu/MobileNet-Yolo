@@ -65,8 +65,6 @@ version-RFB-320|0.787     |0.698       |0.438
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/p1.jpg)
 ## YoloFace-500k-v2 Test results(thresh 0.7)
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/f2.jpg)
-## YoloFace-500k Ncnn sample
-* C++: https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/sample/ncnn
 ## Reference&Framework instructions&How to Train
 * https://github.com/AlexeyAB/darknet
 * You must use a pre-trained model to train your own data set. You can make a pre-trained model based on the weights of COCO training in this project to initialize the network parameters
