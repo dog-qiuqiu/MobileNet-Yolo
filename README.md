@@ -43,8 +43,8 @@ Network|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kir
 :---:|:---:|:---:|:---:|:---:|:---:
 UltraFace-version-RFB|320x240|&ms|3.36ms|0.1BFlops|1.3MB
 UltraFace-version-Slim|320x240|&ms|3.06ms|0.1BFlops|1.2MB
-[yoloface-500k](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k)|320x256|5.5ms|2.4ms|0.1BFlops|0.52MB
-[yoloface-500k-v2](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k)|352x288|4.7ms|2.0ms|0.1BFlops|0.42MB
+[yoloface-500k](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k/v1)|320x256|5.5ms|2.4ms|0.1BFlops|0.52MB
+[yoloface-500k-v2](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k/v2)|352x288|4.7ms|2.0ms|0.1BFlops|0.42MB
 * 都500k了，要啥mAP:sunglasses:
 * Inference time (DarkNet/i7-6700):13ms
 * The mnn benchmark only includes the forward inference time
