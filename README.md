@@ -60,7 +60,7 @@ version-RFB-320|0.787     |0.698       |0.438
 [yoloface-500k-320](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k)|**0.728**|**0.682**|**0.431**|
 [yoloface-500k-352-v2](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-500k)|**0.768**|**0.729**|**0.490**|
 * yoloface-500k-v2：The SE&CSP module is added after the FPN feature map splicing
-* wider_face_val(ap05): yoloface-500k: 53.75 yoloface-500k-v2: 54.57
+* wider_face_val(ap05): yoloface-500k: 53.75 yoloface-500k-v2: 56.69
 ## YoloFace-500k Test results(thresh 0.7)
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/p1.jpg)
 ## YoloFace-500k-v2 Test results(thresh 0.7)
