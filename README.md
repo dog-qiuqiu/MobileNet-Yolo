@@ -1,5 +1,6 @@
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/7a96026f319ad31e28bc55458ee97e97.gif)
 ## Road Map
+* yoloface-100k：亚毫秒级人脸检测模型
 * 基于双金字塔结构改善不同尺度特征图融合，添加cspnet，进一步提升性能，模型开发优先级：Nano》Fastest》Lite
 ## MobileNetv2-YOLOv3-SPP Darknet 
 
