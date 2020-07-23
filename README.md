@@ -75,9 +75,9 @@ Network|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kir
 yoloface-100k|112x112|0.8ms|&ms|2ms|0.09BFlops|109kb
 * ***For the close-range face detection model in a specific scene, the recommended detection distance is 1.5m***
 * The detection distance can be increased by increasing the model input size (multiple of 16)
-## YoloFace-100k Test results(thresh 0.7)
+## YoloFace-100k Test results(thresh 0.7 input_size:112x112)
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/yoloface-100k-1.jpg)
-## YoloFace-100k Test results(thresh 0.7)
+## YoloFace-100k Test results(thresh 0.7 input_size:224x224)
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/yoloface-100k-2.jpg)
 ## Reference&Framework instructions&How to Train
 * https://github.com/AlexeyAB/darknet
