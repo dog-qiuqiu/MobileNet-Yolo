@@ -72,7 +72,7 @@ version-RFB-320|0.787     |0.698       |0.438
 ## yoloface-100k: Sub-millisecond face detection model
 Network|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|Inference time (DarkNet/i7-6700)|FLOPS|Weight size
 :---:|:---:|:---:|:---:|:---:|:---:|:---:
-yoloface-100k|112x112|0.8ms|&ms|2ms|0.09BFlops|109kb
+yoloface-100k|112x112|0.8ms|0.325ms|2ms|0.09BFlops|109kb
 * ***For the close-range face detection model in a specific scene, the recommended detection distance is 1.5m***
 * The detection distance can be increased by increasing the model input size (multiple of 16)
 ## YoloFace-100k Test results(thresh 0.7 input_size:112x112)
