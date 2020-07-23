@@ -41,7 +41,7 @@ Network|Resolution|VOC mAP(0.5)|Inference time (DarkNet/i7-6700)|Inference time 
 * This model is recommended to do some simple single object detection suitable for simple application scenarios
 ## MobileNetV2-YOLO-Fastest Test results
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/Fastest.jpg)
-## 500kb的yolo-Face-Detection
+## yoloface-500k: 500kb yolo-Face-Detection
 Network|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|FLOPS|Weight size
 :---:|:---:|:---:|:---:|:---:|:---:
 UltraFace-version-RFB|320x240|&ms|3.36ms|0.1BFlops|1.3MB
@@ -69,6 +69,16 @@ version-RFB-320|0.787     |0.698       |0.438
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/p1.jpg)
 ## YoloFace-500k-v2 Test results(thresh 0.7)
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/f2.jpg)
+## yoloface-100k: Sub-millisecond face detection model
+Network|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|Inference time (DarkNet/i7-6700)|FLOPS|Weight size
+:---:|:---:|:---:|:---:|:---:|:---:|:---:
+yoloface-100k|112x112|0.8ms|&ms|2ms|0.09BFlops|109kb
+* ***For the close-range face detection model in a specific scene, the recommended detection distance is 1.5m
+* The detection distance can be increased by increasing the model input size (multiple of 16)
+## YoloFace-100k Test results(thresh 0.7)
+![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/yoloface-100k-1.jpg)
+## YoloFace-100k Test results(thresh 0.7)
+![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/yoloface-100k-2.jpg)
 ## Reference&Framework instructions&How to Train
 * https://github.com/AlexeyAB/darknet
 * You must use a pre-trained model to train your own data set. You can make a pre-trained model based on the weights of COCO training in this project to initialize the network parameters
