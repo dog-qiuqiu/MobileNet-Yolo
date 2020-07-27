@@ -4,15 +4,8 @@
 * 基于双金字塔结构改善不同尺度特征图融合，添加cspnet，进一步提升性能，模型开发优先级：Nano》Fastest》Lite
 ## MobileNetv2-YOLOv3-SPP Darknet 
 
-A darknet implementation of MobileNetv2-YOLOv3-SPP detection network
 
-Network|COCO mAP(0.5)|Resolution|FLOPS|Weight size
-:---:|:---:|:---:|:---:|:---:
-[MobileNetV2-YOLOv3-SPP](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/MobileNetV2-YOLOv3-SPP)|42.6|416|6.1BFlops|17.6MB
-[YOLOv4-Tiny](https://github.com/AlexeyAB/darknet#pre-trained-models)|40.2|416|6.9BFlops|23.1MB
-
-*emmmm...这个懒得训练，mAP就凑合这样吧
-## ***Darknet Group convolution is not well supported on some GPUs such as NVIDIA PASCAL!!! The MobileNetV2-YOLOv3-SPP	inference time is 100ms at GTX1080ti, but RTX2080 inference time is 5ms!!!***
+## ***Darknet Group convolution is not well supported on some GPUs such as NVIDIA PASCAL!!! 
 * https://github.com/AlexeyAB/darknet/issues/6091#issuecomment-651667469
 ## MobileNetV2-YOLOv3-Lite&Nano Darknet
 #### Mobile inference frameworks benchmark (4*ARM_CPU)
@@ -22,6 +15,7 @@ Network|VOC mAP(0.5)|COCO mAP(0.5)|Resolution|Inference time (NCNN/Kirin 990)|In
 [MobileNetV2-YOLOv3-Nano](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/MobileNetV2-YOLOv3-Nano)(our)|65.27|30.13|320|10.16 ms|5 ms|0.5BFlops|3.0MB
 [MobileNetV2-YOLOv3](https://github.com/eric612/MobileNet-YOLO)|70.7|&|352|32.15 ms|& ms|2.44BFlops|14.4MB
 [YOLOv3-Tiny-Prn](https://github.com/AlexeyAB/darknet#pre-trained-models)|&|33.1|416|36.6 ms|& ms|3.5BFlops|18.8MB
+[YOLOv4-Tiny](https://github.com/AlexeyAB/darknet#pre-trained-models)|&|40.2|416|44.6 ms|& ms|6.9BFlops|23.1MB
 [YOLO-Nano](https://github.com/liux0614/yolo_nano)|69.1|&|416|& ms|& ms|4.57BFlops|4.0MB
 * Support mobile inference frameworks such as NCNN&MNN
 * The mnn benchmark only includes the forward inference time
