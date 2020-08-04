@@ -74,10 +74,10 @@ def feature_map_handle(length, shape, test_img, box_list):
 
 					w = (((BIAS_W[k]) * math.exp(anchors_box[2]))/INPUT_SIZE)*iw
 					h = (((BIAS_H[k]) * math.exp(anchors_box[3]))/INPUT_SIZE)*ih
-					x1 = int(x - w * 0.5)
-					x2 = int(x + w * 0.5)
-					y1 = int(y - h * 0.5)
-					y2 = int(y + h * 0.5)
+					x1 = int(x - w * 0.55)
+					x2 = int(x + w * 0.55)
+					y1 = int(y - h * 0.35)
+					y2 = int(y + h * 0.50)
 					box_list.append([x1,y1,x2,y2,round(obj_score,4),label])
 
 
@@ -134,7 +134,7 @@ if __name__ == "__main__":
 		points = forward_landmark(landmark_net,face_roi,i)
 		draw_point(test_img, points)
 		cv2.rectangle(test_img, (i[0], i[1]), (i[2], i[3]), (255, 255, 0), 2)
-		cv2.circle(test_img, (int(i[0]+0.5*(i[2]-i[0])), int(i[1]+0.5*(i[3]-i[1]))), 2, (0,255,0), 3)			
+		cv2.circle(test_img, (int(i[0]+0.5*(i[2]-i[0])), int(i[1]+0.5*(i[3]-i[1]))), 2, (0,0,255), 3)			
 		cv2.putText(test_img, "Score:"+str(i[4]), (i[0], i[1]-5), 0, 0.7, (255, 0, 255), 2)	
 		cv2.putText(test_img, "Label:"+"Face", (i[0], i[1]-20), 0, 0.7, (255, 255, 0), 2)
 	#cv2.imshow("capture", test_img)
