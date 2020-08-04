@@ -72,7 +72,7 @@ yoloface-100k|112x112|0.8ms|0.325ms|2ms|0.009BFlops|109kb
 ## YoloFace100k-landmark106(Ultra lightweight 106 point face-landmark model)
 Network|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|Weight size
 :---:|:---:|:---:|:---:|:---:
-landmark106|112x112|0.6ms|0.5ms|1.4MB
+[landmark106](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface100k-landmark106)|112x112|0.6ms|0.5ms|1.4MB
 
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/yoloface100k-landmark106/yoloface-100k-landmark106.jpg)
 ## Reference&Framework instructions&How to Train
