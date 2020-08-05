@@ -55,7 +55,7 @@ def Load_YOLO_model(net,test_img):
 #处理前向输出feature_map
 def feature_map_handle(length, shape, test_img, box_list):
 	ih,iw,_ = test_img.shape
-	confidence = 0.75
+	confidence = 0.9
 	for i in range(length):
 		for j in range(length):
 			anchors_boxs_shape = shape[i][j].reshape((3, 6))
