@@ -55,7 +55,7 @@ def Load_YOLO_model(net,test_img):
 #处理前向输出feature_map
 def feature_map_handle(length, shape, test_img, box_list):
 	ih,iw,_ = test_img.shape
-	confidence = 0.9
+	confidence = 0.99
 	for i in range(length):
 		for j in range(length):
 			anchors_boxs_shape = shape[i][j].reshape((3, 6))
@@ -113,15 +113,9 @@ def forward_landmark(landmark_net,face_roi,bbox):
 		
 def draw_point(img, points):
 	for i in range(int(len(points)/2)):
-		cv2.circle(img,(int(points[i*2]),int(points[(i*2)+1])), 1, (0,255,0), 2)	
-	
+		cv2.circle(img,(int(points[i*2]),int(points[(i*2)+1])), 1, (255,255,255), 1)
 
-if __name__ == "__main__":
-	INPUT_SIZE = 112	
-	#模型训练时设置的anchor_box比例
-	#21, 28,  34, 49,  61, 77
-	BIAS_W = [21, 34, 61]
-	BIAS_H = [28, 49, 77]
+def test_img():	
 	#加载检测模型
 	net = caffe.Net('caffemodel/yoloface-100k.prototxt', 'caffemodel/yoloface-100k.caffemodel', caffe.TEST)
 	landmark_net = caffe.Net("caffemodel/landmark106.prototxt", "caffemodel/landmark106.caffemodel", caffe.TEST)
@@ -137,6 +131,38 @@ if __name__ == "__main__":
 		cv2.circle(test_img, (int(i[0]+0.5*(i[2]-i[0])), int(i[1]+0.5*(i[3]-i[1]))), 2, (0,0,255), 3)			
 		cv2.putText(test_img, "Score:"+str(i[4]), (i[0], i[1]-5), 0, 0.7, (255, 0, 255), 2)	
 		cv2.putText(test_img, "Label:"+"Face", (i[0], i[1]-20), 0, 0.7, (255, 255, 0), 2)
-	#cv2.imshow("capture", test_img)
 	cv2.imwrite("yoloface-100k-landmark106.jpg",test_img)
-	cv2.waitKey(0)	
+	
+
+def test_cam():
+	#加载检测模型
+	net = caffe.Net('caffemodel/yoloface-100k.prototxt', 'caffemodel/yoloface-100k.caffemodel', caffe.TEST)
+	landmark_net = caffe.Net("caffemodel/landmark106.prototxt", "caffemodel/landmark106.caffemodel", caffe.TEST)
+	#################################
+        cap = cv2.VideoCapture(0)     
+        while True:
+		ret, test_img = cap.read()
+		out_shape = Load_YOLO_model(net,test_img)
+		output_box = dect_box_handle(out_shape, test_img)
+		for i in output_box:
+			face_roi = test_img[i[1]:i[3],i[0]:i[2]]
+			points = forward_landmark(landmark_net,face_roi,i)
+			draw_point(test_img, points)
+			cv2.rectangle(test_img, (i[0], i[1]), (i[2], i[3]), (255, 255, 0), 1)
+			cv2.circle(test_img, (int(i[0]+0.5*(i[2]-i[0])), int(i[1]+0.5*(i[3]-i[1]))), 2, (0,0,255), 3)			
+			#cv2.putText(test_img, "Score:"+str(i[4]), (i[0], i[1]-5), 0, 0.7, (255, 0, 255), 1)	
+		cv2.imshow("test", test_img)
+		cv2.waitKey(1)	
+	cap.release()
+	cv2.destroyAllWindows()	
+
+if __name__ == "__main__":
+	INPUT_SIZE = 112
+	#模型训练时设置的anchor_box比例
+	#21, 28,  34, 49,  61, 77
+	BIAS_W = [21, 34, 61]
+	BIAS_H = [28, 49, 77]
+	#摄像头检测
+	test_cam()
+	#图像检测
+	#test_img()
