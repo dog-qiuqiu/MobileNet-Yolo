@@ -49,7 +49,7 @@ def Load_YOLO_model(net,test_img):
 	input_img = cv2.cvtColor(input_img, cv2.COLOR_BGR2RGB)
 	input_img = input_img.transpose(2,0,1)
 	input_img = input_img.reshape((1,3,INPUT_SIZE,INPUT_SIZE))
-	out = net.forward_all(data=input_img/256.)
+	out = net.forward_all(data=input_img/255.)
 	return out["layer51-conv"].transpose(0, 3, 2, 1)[0]
 
 #处理前向输出feature_map
