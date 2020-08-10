@@ -1,8 +1,9 @@
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/7a96026f319ad31e28bc55458ee97e97.gif)
 ## ***Darknet Group convolution is not well supported on some GPUs such as NVIDIA PASCAL!!! 
 * https://github.com/AlexeyAB/darknet/issues/6091#issuecomment-651667469
-## 针对某些Pascal显卡例如1080ti在darknet上训练失败的可以采用Pytorch版yolo3框架训练
+## 针对某些Pascal显卡例如1080ti在darknet上 训练失败/训练异常缓慢/推理速度异常 的可以采用Pytorch版yolo3框架 训练/推理
 * https://github.com/dog-qiuqiu/yolov3
+
 ## MobileNetV2-YOLOv3-Lite&Nano Darknet
 #### Mobile inference frameworks benchmark (4*ARM_CPU)
 Network|VOC mAP(0.5)|COCO mAP(0.5)|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|FLOPS|Weight size
