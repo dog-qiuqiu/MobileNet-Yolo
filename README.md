@@ -36,7 +36,7 @@ Network|Resolution|VOC mAP(0.5)|Inference time (DarkNet/i7-6700)|Inference time 
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/Fastest.jpg)
 # Application
 ## Ultralight-SimplePose 
-* The mobile terminal is designed with an ultra-lightweight human body posture key point detection model, which can cooperate with MobileNetV2-YOLOv3-Nano to complete the human body posture estimation task
+* A ultra-lightweight human body posture key point prediction model designed for mobile devices, which can cooperate with MobileNetV2-YOLOv3-Nano to complete the human body posture estimation task
 * https://github.com/dog-qiuqiu/Ultralight-SimplePose
 
 ![image](https://github.com/dog-qiuqiu/Ultralight-SimplePose/blob/master/data/Figure_1-1.jpg)
