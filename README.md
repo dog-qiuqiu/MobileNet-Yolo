@@ -34,6 +34,10 @@ Network|Resolution|VOC mAP(0.5)|Inference time (DarkNet/i7-6700)|Inference time 
 * This model is recommended to do some simple single object detection suitable for simple application scenarios
 ## MobileNetV2-YOLO-Fastest Test results
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/Fastest.jpg)
+## Ultralight-SimplePose 
+* The mobile terminal is designed with an ultra-lightweight human body posture key point detection model, which can cooperate with MobileNetV2-YOLOv3-Nano to complete the human body posture estimation task
+
+![image](https://github.com/dog-qiuqiu/Ultralight-SimplePose/blob/master/data/Figure_1-1.jpg)
 ## yoloface-500k: 500kb yolo-Face-Detection
 Network|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|FLOPS|Weight size
 :---:|:---:|:---:|:---:|:---:|:---:
