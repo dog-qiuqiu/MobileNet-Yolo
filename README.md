@@ -40,7 +40,7 @@ Network|Resolution|VOC mAP(0.5)|Inference time (DarkNet/i7-6700)|Inference time 
 * https://github.com/dog-qiuqiu/Ultralight-SimplePose
 
 ![image](https://github.com/dog-qiuqiu/Ultralight-SimplePose/blob/master/data/Figure_1-1.jpg)
-## yoloface-500k: 500kb yolo-Face-Detection
+## YoloFace-500k: 500kb yolo-Face-Detection
 Network|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|FLOPS|Weight size
 :---:|:---:|:---:|:---:|:---:|:---:
 UltraFace-version-RFB|320x240|&ms|3.36ms|0.1BFlops|1.3MB
@@ -68,7 +68,7 @@ version-RFB-320|0.787     |0.698       |0.438
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/p1.jpg)
 ## YoloFace-500k-v2 Test results(thresh 0.7)
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/f2.jpg)
-## yoloface-50k: Sub-millisecond face detection model
+## YoloFace-50k: Sub-millisecond face detection model
 Network|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|Inference time (DarkNet/i7-6700)|FLOPS|Weight size
 :---:|:---:|:---:|:---:|:---:|:---:|:---:
 [yoloface-50k](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-50k)|56x56|&ms|&ms|&ms|0.001BFlops|46kb
