@@ -81,7 +81,7 @@ Network|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kir
 [landmark106](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface50k-landmark106)|112x112|0.6ms|0.5ms|1.4MB
 * Face detection: yoloface-50k Landmark: landmark106
 ## YoloFace50k-landmark106 Test results
-![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/yoloface100k-landmark106/yoloface-50k-landmark106.jpg)
+![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/yoloface50k-landmark106/yoloface-50k-landmark106.jpg)
 ## Reference&Framework instructions&How to Train
 * https://github.com/AlexeyAB/darknet
 * You must use a pre-trained model to train your own data set. You can make a pre-trained model based on the weights of COCO training in this project to initialize the network parameters
