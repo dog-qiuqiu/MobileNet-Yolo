@@ -1,0 +1,6 @@
+classes= 1
+train  = /OPEN_FACE/train.txt
+valid  = /OPEN_FACE/val.txt
+names = label.names
+backup = /model
+
