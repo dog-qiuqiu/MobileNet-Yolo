@@ -68,16 +68,14 @@ version-RFB-320|0.787     |0.698       |0.438
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/p1.jpg)
 ## YoloFace-500k-v2 Test results(thresh 0.7)
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/f2.jpg)
-## yoloface-100k: Sub-millisecond face detection model
+## yoloface-50k: Sub-millisecond face detection model
 Network|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|Inference time (DarkNet/i7-6700)|FLOPS|Weight size
 :---:|:---:|:---:|:---:|:---:|:---:|:---:
-[yoloface-100k](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-100k)|112x112|0.8ms|0.325ms|2ms|0.009BFlops|109kb
+[yoloface-50k](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/yoloface-50k)|56x56|&ms|&ms|&ms|0.001BFlops|46kb
 * ***For the close-range face detection model in a specific scene, the recommended detection distance is 1.5m***
 * The detection distance can be increased by increasing the model input size (multiple of 16)
-## YoloFace-100k Test results(thresh 0.7 input_size:112x112)
-![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/yoloface-100k-1.jpg)
-## YoloFace-100k Test results(thresh 0.7 input_size:224x224)
-![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/yoloface-100k-2.jpg)
+## YoloFace-50k Test results(thresh 0.7)
+![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/yoloface-50k-1.jpg)
 ## YoloFace100k-landmark106(Ultra lightweight 106 point face-landmark model)
 Network|Resolution|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|Weight size
 :---:|:---:|:---:|:---:|:---:
