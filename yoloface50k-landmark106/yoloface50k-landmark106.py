@@ -100,7 +100,6 @@ def forward_landmark(landmark_net,face_roi,bbox):
 	sh = float(ih)/float(112)
 	
 	res = cv2.resize(face_roi, (112, 112), 0.0, 0.0, interpolation=cv2.INTER_CUBIC)
-        res= cv2.cvtColor(res, cv2.COLOR_BGR2RGB)
 	resize_mat = np.float32(res)
 	#(x-127.5)/127.5
 	new_img = (resize_mat - 127.5) / (127.5)
