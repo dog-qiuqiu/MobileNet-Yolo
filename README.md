@@ -12,6 +12,7 @@ Network|VOC mAP(0.5)|COCO mAP(0.5)|Resolution|Inference time (NCNN/Kirin 990)|In
 [MobileNetV2-YOLOv3-Nano](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/MobileNetV2-YOLOv3-Nano)(our)|65.27|30.13|320|10.16 ms|5 ms|0.5BFlops|3.0MB
 [MobileNetV2-YOLOv3](https://github.com/eric612/MobileNet-YOLO)|70.7|&|352|32.15 ms|& ms|2.44BFlops|14.4MB
 [MobileNet-SSD](https://github.com/chuanqi305/MobileNet-SSD)|72.7|&|300|26.37 ms|& ms|& BFlops|23.1MB
+[YOLOv5s](https://github.com/ultralytics/yolov5)|&|56.2|416|150.5 ms|& ms|13.2BFlops|28.1MB
 [YOLOv3-Tiny-Prn](https://github.com/AlexeyAB/darknet#pre-trained-models)|&|33.1|416|36.6 ms|& ms|3.5BFlops|18.8MB
 [YOLOv4-Tiny](https://github.com/AlexeyAB/darknet#pre-trained-models)|&|40.2|416|44.6 ms|& ms|6.9BFlops|23.1MB
 [YOLO-Nano](https://github.com/liux0614/yolo_nano)|69.1|&|416|& ms|& ms|4.57BFlops|4.0MB
