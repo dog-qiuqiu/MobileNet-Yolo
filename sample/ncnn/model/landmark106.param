@@ -1,0 +1,83 @@
+7767517
+81 89
+Input                    data                     0 1 data -23330=4,3,112,112,3 0=112 1=112 2=3
+Convolution              conv1_conv2d             1 1 data conv1_batchnorm_conv1_batchnorm_scale -23330=4,3,56,56,8 0=8 1=3 3=2 4=1 5=1 6=216
+PReLU                    conv1_relu               1 1 conv1_batchnorm_conv1_batchnorm_scale conv1_batchnorm_conv1_relu -23330=4,3,56,56,8 0=8
+Split                    splitncnn_0              1 2 conv1_batchnorm_conv1_relu conv1_batchnorm_conv1_relu_splitncnn_0 conv1_batchnorm_conv1_relu_splitncnn_1 -23330=8,3,56,56,8,3,56,56,8
+Convolution              res2_block0_conv_sep_conv2d 1 1 conv1_batchnorm_conv1_relu_splitncnn_1 res2_block0_conv_sep_batchnorm_res2_block0_conv_sep_batchnorm_scale -23330=4,3,56,56,8 0=8 1=1 5=1 6=64
+PReLU                    res2_block0_conv_sep_relu 1 1 res2_block0_conv_sep_batchnorm_res2_block0_conv_sep_batchnorm_scale res2_block0_conv_sep_batchnorm_res2_block0_conv_sep_relu -23330=4,3,56,56,8 0=8
+ConvolutionDepthWise     res2_block0_conv_dw_conv2d 1 1 res2_block0_conv_sep_batchnorm_res2_block0_conv_sep_relu res2_block0_conv_dw_batchnorm_res2_block0_conv_dw_batchnorm_scale -23330=4,3,56,56,8 0=8 1=3 4=1 5=1 6=72 7=8
+PReLU                    res2_block0_conv_dw_relu 1 1 res2_block0_conv_dw_batchnorm_res2_block0_conv_dw_batchnorm_scale res2_block0_conv_dw_batchnorm_res2_block0_conv_dw_relu -23330=4,3,56,56,8 0=8
+Convolution              res2_block0_conv_proj_conv2d 1 1 res2_block0_conv_dw_batchnorm_res2_block0_conv_dw_relu res2_block0_conv_proj_batchnorm_res2_block0_conv_proj_batchnorm_scale -23330=4,3,56,56,8 0=8 1=1 5=1 6=64
+Eltwise                  plus0                    2 1 res2_block0_conv_proj_batchnorm_res2_block0_conv_proj_batchnorm_scale conv1_batchnorm_conv1_relu_splitncnn_0 plus0 -23330=4,3,56,56,8 0=1
+Convolution              dconv23_conv_sep_conv2d  1 1 plus0 dconv23_conv_sep_batchnorm_dconv23_conv_sep_batchnorm_scale -23330=4,3,56,56,16 0=16 1=1 5=1 6=128
+PReLU                    dconv23_conv_sep_relu    1 1 dconv23_conv_sep_batchnorm_dconv23_conv_sep_batchnorm_scale dconv23_conv_sep_batchnorm_dconv23_conv_sep_relu -23330=4,3,56,56,16 0=16
+ConvolutionDepthWise     dconv23_conv_dw_conv2d   1 1 dconv23_conv_sep_batchnorm_dconv23_conv_sep_relu dconv23_conv_dw_batchnorm_dconv23_conv_dw_batchnorm_scale -23330=4,3,28,28,16 0=16 1=3 3=2 4=1 5=1 6=144 7=16
+PReLU                    dconv23_conv_dw_relu     1 1 dconv23_conv_dw_batchnorm_dconv23_conv_dw_batchnorm_scale dconv23_conv_dw_batchnorm_dconv23_conv_dw_relu -23330=4,3,28,28,16 0=16
+Convolution              dconv23_conv_proj_conv2d 1 1 dconv23_conv_dw_batchnorm_dconv23_conv_dw_relu dconv23_conv_proj_batchnorm_dconv23_conv_proj_batchnorm_scale -23330=4,3,28,28,16 0=16 1=1 5=1 6=256
+Split                    splitncnn_1              1 2 dconv23_conv_proj_batchnorm_dconv23_conv_proj_batchnorm_scale dconv23_conv_proj_batchnorm_dconv23_conv_proj_batchnorm_scale_splitncnn_0 dconv23_conv_proj_batchnorm_dconv23_conv_proj_batchnorm_scale_splitncnn_1 -23330=8,3,28,28,16,3,28,28,16
+Convolution              res3_block0_conv_sep_conv2d 1 1 dconv23_conv_proj_batchnorm_dconv23_conv_proj_batchnorm_scale_splitncnn_1 res3_block0_conv_sep_batchnorm_res3_block0_conv_sep_batchnorm_scale -23330=4,3,28,28,16 0=16 1=1 5=1 6=256
+PReLU                    res3_block0_conv_sep_relu 1 1 res3_block0_conv_sep_batchnorm_res3_block0_conv_sep_batchnorm_scale res3_block0_conv_sep_batchnorm_res3_block0_conv_sep_relu -23330=4,3,28,28,16 0=16
+ConvolutionDepthWise     res3_block0_conv_dw_conv2d 1 1 res3_block0_conv_sep_batchnorm_res3_block0_conv_sep_relu res3_block0_conv_dw_batchnorm_res3_block0_conv_dw_batchnorm_scale -23330=4,3,28,28,16 0=16 1=3 4=1 5=1 6=144 7=16
+PReLU                    res3_block0_conv_dw_relu 1 1 res3_block0_conv_dw_batchnorm_res3_block0_conv_dw_batchnorm_scale res3_block0_conv_dw_batchnorm_res3_block0_conv_dw_relu -23330=4,3,28,28,16 0=16
+Convolution              res3_block0_conv_proj_conv2d 1 1 res3_block0_conv_dw_batchnorm_res3_block0_conv_dw_relu res3_block0_conv_proj_batchnorm_res3_block0_conv_proj_batchnorm_scale -23330=4,3,28,28,16 0=16 1=1 5=1 6=256
+Eltwise                  plus1                    2 1 res3_block0_conv_proj_batchnorm_res3_block0_conv_proj_batchnorm_scale dconv23_conv_proj_batchnorm_dconv23_conv_proj_batchnorm_scale_splitncnn_0 plus1 -23330=4,3,28,28,16 0=1
+Split                    splitncnn_2              1 2 plus1 plus1_splitncnn_0 plus1_splitncnn_1 -23330=8,3,28,28,16,3,28,28,16
+Convolution              res3_block1_conv_sep_conv2d 1 1 plus1_splitncnn_1 res3_block1_conv_sep_batchnorm_res3_block1_conv_sep_batchnorm_scale -23330=4,3,28,28,16 0=16 1=1 5=1 6=256
+PReLU                    res3_block1_conv_sep_relu 1 1 res3_block1_conv_sep_batchnorm_res3_block1_conv_sep_batchnorm_scale res3_block1_conv_sep_batchnorm_res3_block1_conv_sep_relu -23330=4,3,28,28,16 0=16
+ConvolutionDepthWise     res3_block1_conv_dw_conv2d 1 1 res3_block1_conv_sep_batchnorm_res3_block1_conv_sep_relu res3_block1_conv_dw_batchnorm_res3_block1_conv_dw_batchnorm_scale -23330=4,3,28,28,16 0=16 1=3 4=1 5=1 6=144 7=16
+PReLU                    res3_block1_conv_dw_relu 1 1 res3_block1_conv_dw_batchnorm_res3_block1_conv_dw_batchnorm_scale res3_block1_conv_dw_batchnorm_res3_block1_conv_dw_relu -23330=4,3,28,28,16 0=16
+Convolution              res3_block1_conv_proj_conv2d 1 1 res3_block1_conv_dw_batchnorm_res3_block1_conv_dw_relu res3_block1_conv_proj_batchnorm_res3_block1_conv_proj_batchnorm_scale -23330=4,3,28,28,16 0=16 1=1 5=1 6=256
+Eltwise                  plus2                    2 1 res3_block1_conv_proj_batchnorm_res3_block1_conv_proj_batchnorm_scale plus1_splitncnn_0 plus2 -23330=4,3,28,28,16 0=1
+Convolution              dconv34_conv_sep_conv2d  1 1 plus2 dconv34_conv_sep_batchnorm_dconv34_conv_sep_batchnorm_scale -23330=4,3,28,28,32 0=32 1=1 5=1 6=512
+PReLU                    dconv34_conv_sep_relu    1 1 dconv34_conv_sep_batchnorm_dconv34_conv_sep_batchnorm_scale dconv34_conv_sep_batchnorm_dconv34_conv_sep_relu -23330=4,3,28,28,32 0=32
+ConvolutionDepthWise     dconv34_conv_dw_conv2d   1 1 dconv34_conv_sep_batchnorm_dconv34_conv_sep_relu dconv34_conv_dw_batchnorm_dconv34_conv_dw_batchnorm_scale -23330=4,3,14,14,32 0=32 1=3 3=2 4=1 5=1 6=288 7=32
+PReLU                    dconv34_conv_dw_relu     1 1 dconv34_conv_dw_batchnorm_dconv34_conv_dw_batchnorm_scale dconv34_conv_dw_batchnorm_dconv34_conv_dw_relu -23330=4,3,14,14,32 0=32
+Convolution              dconv34_conv_proj_conv2d 1 1 dconv34_conv_dw_batchnorm_dconv34_conv_dw_relu dconv34_conv_proj_batchnorm_dconv34_conv_proj_batchnorm_scale -23330=4,3,14,14,32 0=32 1=1 5=1 6=1024
+Split                    splitncnn_3              1 2 dconv34_conv_proj_batchnorm_dconv34_conv_proj_batchnorm_scale dconv34_conv_proj_batchnorm_dconv34_conv_proj_batchnorm_scale_splitncnn_0 dconv34_conv_proj_batchnorm_dconv34_conv_proj_batchnorm_scale_splitncnn_1 -23330=8,3,14,14,32,3,14,14,32
+Convolution              res4_block0_conv_sep_conv2d 1 1 dconv34_conv_proj_batchnorm_dconv34_conv_proj_batchnorm_scale_splitncnn_1 res4_block0_conv_sep_batchnorm_res4_block0_conv_sep_batchnorm_scale -23330=4,3,14,14,32 0=32 1=1 5=1 6=1024
+PReLU                    res4_block0_conv_sep_relu 1 1 res4_block0_conv_sep_batchnorm_res4_block0_conv_sep_batchnorm_scale res4_block0_conv_sep_batchnorm_res4_block0_conv_sep_relu -23330=4,3,14,14,32 0=32
+ConvolutionDepthWise     res4_block0_conv_dw_conv2d 1 1 res4_block0_conv_sep_batchnorm_res4_block0_conv_sep_relu res4_block0_conv_dw_batchnorm_res4_block0_conv_dw_batchnorm_scale -23330=4,3,14,14,32 0=32 1=3 4=1 5=1 6=288 7=32
+PReLU                    res4_block0_conv_dw_relu 1 1 res4_block0_conv_dw_batchnorm_res4_block0_conv_dw_batchnorm_scale res4_block0_conv_dw_batchnorm_res4_block0_conv_dw_relu -23330=4,3,14,14,32 0=32
+Convolution              res4_block0_conv_proj_conv2d 1 1 res4_block0_conv_dw_batchnorm_res4_block0_conv_dw_relu res4_block0_conv_proj_batchnorm_res4_block0_conv_proj_batchnorm_scale -23330=4,3,14,14,32 0=32 1=1 5=1 6=1024
+Eltwise                  plus3                    2 1 res4_block0_conv_proj_batchnorm_res4_block0_conv_proj_batchnorm_scale dconv34_conv_proj_batchnorm_dconv34_conv_proj_batchnorm_scale_splitncnn_0 plus3 -23330=4,3,14,14,32 0=1
+Split                    splitncnn_4              1 2 plus3 plus3_splitncnn_0 plus3_splitncnn_1 -23330=8,3,14,14,32,3,14,14,32
+Convolution              res4_block1_conv_sep_conv2d 1 1 plus3_splitncnn_1 res4_block1_conv_sep_batchnorm_res4_block1_conv_sep_batchnorm_scale -23330=4,3,14,14,32 0=32 1=1 5=1 6=1024
+PReLU                    res4_block1_conv_sep_relu 1 1 res4_block1_conv_sep_batchnorm_res4_block1_conv_sep_batchnorm_scale res4_block1_conv_sep_batchnorm_res4_block1_conv_sep_relu -23330=4,3,14,14,32 0=32
+ConvolutionDepthWise     res4_block1_conv_dw_conv2d 1 1 res4_block1_conv_sep_batchnorm_res4_block1_conv_sep_relu res4_block1_conv_dw_batchnorm_res4_block1_conv_dw_batchnorm_scale -23330=4,3,14,14,32 0=32 1=3 4=1 5=1 6=288 7=32
+PReLU                    res4_block1_conv_dw_relu 1 1 res4_block1_conv_dw_batchnorm_res4_block1_conv_dw_batchnorm_scale res4_block1_conv_dw_batchnorm_res4_block1_conv_dw_relu -23330=4,3,14,14,32 0=32
+Convolution              res4_block1_conv_proj_conv2d 1 1 res4_block1_conv_dw_batchnorm_res4_block1_conv_dw_relu res4_block1_conv_proj_batchnorm_res4_block1_conv_proj_batchnorm_scale -23330=4,3,14,14,32 0=32 1=1 5=1 6=1024
+Eltwise                  plus4                    2 1 res4_block1_conv_proj_batchnorm_res4_block1_conv_proj_batchnorm_scale plus3_splitncnn_0 plus4 -23330=4,3,14,14,32 0=1
+Split                    splitncnn_5              1 2 plus4 plus4_splitncnn_0 plus4_splitncnn_1 -23330=8,3,14,14,32,3,14,14,32
+Convolution              res4_block2_conv_sep_conv2d 1 1 plus4_splitncnn_1 res4_block2_conv_sep_batchnorm_res4_block2_conv_sep_batchnorm_scale -23330=4,3,14,14,32 0=32 1=1 5=1 6=1024
+PReLU                    res4_block2_conv_sep_relu 1 1 res4_block2_conv_sep_batchnorm_res4_block2_conv_sep_batchnorm_scale res4_block2_conv_sep_batchnorm_res4_block2_conv_sep_relu -23330=4,3,14,14,32 0=32
+ConvolutionDepthWise     res4_block2_conv_dw_conv2d 1 1 res4_block2_conv_sep_batchnorm_res4_block2_conv_sep_relu res4_block2_conv_dw_batchnorm_res4_block2_conv_dw_batchnorm_scale -23330=4,3,14,14,32 0=32 1=3 4=1 5=1 6=288 7=32
+PReLU                    res4_block2_conv_dw_relu 1 1 res4_block2_conv_dw_batchnorm_res4_block2_conv_dw_batchnorm_scale res4_block2_conv_dw_batchnorm_res4_block2_conv_dw_relu -23330=4,3,14,14,32 0=32
+Convolution              res4_block2_conv_proj_conv2d 1 1 res4_block2_conv_dw_batchnorm_res4_block2_conv_dw_relu res4_block2_conv_proj_batchnorm_res4_block2_conv_proj_batchnorm_scale -23330=4,3,14,14,32 0=32 1=1 5=1 6=1024
+Eltwise                  plus5                    2 1 res4_block2_conv_proj_batchnorm_res4_block2_conv_proj_batchnorm_scale plus4_splitncnn_0 plus5 -23330=4,3,14,14,32 0=1
+Convolution              dconv45_conv_sep_conv2d  1 1 plus5 dconv45_conv_sep_batchnorm_dconv45_conv_sep_batchnorm_scale -23330=4,3,14,14,64 0=64 1=1 5=1 6=2048
+PReLU                    dconv45_conv_sep_relu    1 1 dconv45_conv_sep_batchnorm_dconv45_conv_sep_batchnorm_scale dconv45_conv_sep_batchnorm_dconv45_conv_sep_relu -23330=4,3,14,14,64 0=64
+ConvolutionDepthWise     dconv45_conv_dw_conv2d   1 1 dconv45_conv_sep_batchnorm_dconv45_conv_sep_relu dconv45_conv_dw_batchnorm_dconv45_conv_dw_batchnorm_scale -23330=4,3,7,7,64 0=64 1=3 3=2 4=1 5=1 6=576 7=64
+PReLU                    dconv45_conv_dw_relu     1 1 dconv45_conv_dw_batchnorm_dconv45_conv_dw_batchnorm_scale dconv45_conv_dw_batchnorm_dconv45_conv_dw_relu -23330=4,3,7,7,64 0=64
+Convolution              dconv45_conv_proj_conv2d 1 1 dconv45_conv_dw_batchnorm_dconv45_conv_dw_relu dconv45_conv_proj_batchnorm_dconv45_conv_proj_batchnorm_scale -23330=4,3,7,7,64 0=64 1=1 5=1 6=4096
+Split                    splitncnn_6              1 2 dconv45_conv_proj_batchnorm_dconv45_conv_proj_batchnorm_scale dconv45_conv_proj_batchnorm_dconv45_conv_proj_batchnorm_scale_splitncnn_0 dconv45_conv_proj_batchnorm_dconv45_conv_proj_batchnorm_scale_splitncnn_1 -23330=8,3,7,7,64,3,7,7,64
+Convolution              res5_block0_conv_sep_conv2d 1 1 dconv45_conv_proj_batchnorm_dconv45_conv_proj_batchnorm_scale_splitncnn_1 res5_block0_conv_sep_batchnorm_res5_block0_conv_sep_batchnorm_scale -23330=4,3,7,7,64 0=64 1=1 5=1 6=4096
+PReLU                    res5_block0_conv_sep_relu 1 1 res5_block0_conv_sep_batchnorm_res5_block0_conv_sep_batchnorm_scale res5_block0_conv_sep_batchnorm_res5_block0_conv_sep_relu -23330=4,3,7,7,64 0=64
+ConvolutionDepthWise     res5_block0_conv_dw_conv2d 1 1 res5_block0_conv_sep_batchnorm_res5_block0_conv_sep_relu res5_block0_conv_dw_batchnorm_res5_block0_conv_dw_batchnorm_scale -23330=4,3,7,7,64 0=64 1=3 4=1 5=1 6=576 7=64
+PReLU                    res5_block0_conv_dw_relu 1 1 res5_block0_conv_dw_batchnorm_res5_block0_conv_dw_batchnorm_scale res5_block0_conv_dw_batchnorm_res5_block0_conv_dw_relu -23330=4,3,7,7,64 0=64
+Convolution              res5_block0_conv_proj_conv2d 1 1 res5_block0_conv_dw_batchnorm_res5_block0_conv_dw_relu res5_block0_conv_proj_batchnorm_res5_block0_conv_proj_batchnorm_scale -23330=4,3,7,7,64 0=64 1=1 5=1 6=4096
+Eltwise                  plus6                    2 1 res5_block0_conv_proj_batchnorm_res5_block0_conv_proj_batchnorm_scale dconv45_conv_proj_batchnorm_dconv45_conv_proj_batchnorm_scale_splitncnn_0 plus6 -23330=4,3,7,7,64 0=1
+Split                    splitncnn_7              1 2 plus6 plus6_splitncnn_0 plus6_splitncnn_1 -23330=8,3,7,7,64,3,7,7,64
+Convolution              res5_block1_conv_sep_conv2d 1 1 plus6_splitncnn_1 res5_block1_conv_sep_batchnorm_res5_block1_conv_sep_batchnorm_scale -23330=4,3,7,7,64 0=64 1=1 5=1 6=4096
+PReLU                    res5_block1_conv_sep_relu 1 1 res5_block1_conv_sep_batchnorm_res5_block1_conv_sep_batchnorm_scale res5_block1_conv_sep_batchnorm_res5_block1_conv_sep_relu -23330=4,3,7,7,64 0=64
+ConvolutionDepthWise     res5_block1_conv_dw_conv2d 1 1 res5_block1_conv_sep_batchnorm_res5_block1_conv_sep_relu res5_block1_conv_dw_batchnorm_res5_block1_conv_dw_batchnorm_scale -23330=4,3,7,7,64 0=64 1=3 4=1 5=1 6=576 7=64
+PReLU                    res5_block1_conv_dw_relu 1 1 res5_block1_conv_dw_batchnorm_res5_block1_conv_dw_batchnorm_scale res5_block1_conv_dw_batchnorm_res5_block1_conv_dw_relu -23330=4,3,7,7,64 0=64
+Convolution              res5_block1_conv_proj_conv2d 1 1 res5_block1_conv_dw_batchnorm_res5_block1_conv_dw_relu res5_block1_conv_proj_batchnorm_res5_block1_conv_proj_batchnorm_scale -23330=4,3,7,7,64 0=64 1=1 5=1 6=4096
+Eltwise                  plus7                    2 1 res5_block1_conv_proj_batchnorm_res5_block1_conv_proj_batchnorm_scale plus6_splitncnn_0 plus7 -23330=4,3,7,7,64 0=1
+Convolution              conv6_conv2d             1 1 plus7 conv6_batchnorm_conv6_batchnorm_scale -23330=4,3,1,1,64 0=64 1=7 5=1 6=200704
+PReLU                    conv6_relu               1 1 conv6_batchnorm_conv6_batchnorm_scale conv6_batchnorm_conv6_relu -23330=4,3,1,1,64 0=64
+Convolution              fc1_conv2d               1 1 conv6_batchnorm_conv6_relu fc1_batchnorm_fc1_batchnorm_scale -23330=4,3,1,1,128 0=128 1=1 5=1 6=8192
+PReLU                    fc1_relu                 1 1 fc1_batchnorm_fc1_batchnorm_scale fc1_batchnorm_fc1_relu -23330=4,3,1,1,128 0=128
+Convolution              fc2_conv2d               1 1 fc1_batchnorm_fc1_relu fc2_batchnorm_fc2_batchnorm_scale -23330=4,3,1,1,256 0=256 1=1 5=1 6=32768
+PReLU                    fc2_relu                 1 1 fc2_batchnorm_fc2_batchnorm_scale fc2_batchnorm_fc2_relu -23330=4,3,1,1,256 0=256
+InnerProduct             conv6_3                  1 1 fc2_batchnorm_fc2_relu bn6_3_bn6_3_scale -23330=4,1,212,1,1 0=212 1=1 2=54272
