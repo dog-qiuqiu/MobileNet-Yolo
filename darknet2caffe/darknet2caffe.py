@@ -3,7 +3,6 @@ import numpy as np
 from collections import OrderedDict
 from cfg import *
 from prototxt import *
-# from prototxt_xuehao_roth import *
 
 def darknet2caffe(cfgfile, weightfile, protofile, caffemodel):
     net_info = cfg2prototxt(cfgfile)
