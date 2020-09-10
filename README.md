@@ -26,19 +26,7 @@ Network|VOC mAP(0.5)|COCO mAP(0.5)|Resolution|Inference time (NCNN/Kirin 990)|In
 * Darknet Train Configuration: CUDA-version: 10010 (10020), cuDNN: 7.6.4,OpenCV version: 4 GPU:RTX2080ti
 ## MobileNetV2-YOLOv3-Lite-COCO Test results
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/predictions.jpg)
-## MobileNetV2-YOLO-Fastest
-Network|Resolution|VOC mAP(0.5)|Inference time (DarkNet/i7-6700)|Inference time (NCNN/Kirin 990)|Inference time (MNN arm82/Kirin 990)|FLOPS|Weight size
-:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
-[MobileNetV2-YOLOv3-Fastest](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/MobileNetV2-YOLO-Fastest/v1)|320|46.55|26 ms|8.2 ms|2.4 ms|0.13BFlops|700KB
-[MobileNetV2-YOLOv3-Fastest-v2](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/tree/master/MobileNetV2-YOLO-Fastest/v2)|320|50.13|27 ms|& ms|& ms|0.14BFlops|820KB
-* 都2.4ms了，要啥mAP:sunglasses:
-* V2 does not support MNN temporarily
-* Suitable for hardware with extremely tight computing resources
-* The mnn benchmark only includes the forward inference time
-* The ncnn benchmark is the forward inference time + post-processing time(NMS...) of the convolution feature map. 
-* This model is recommended to do some simple single object detection suitable for simple application scenarios
-## MobileNetV2-YOLO-Fastest Test results
-![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/Fastest.jpg)
+
 # Application
 ## Ultralight-SimplePose 
 * A ultra-lightweight human body posture key point prediction model designed for mobile devices, which can cooperate with MobileNetV2-YOLOv3-Nano to complete the human body posture estimation task
