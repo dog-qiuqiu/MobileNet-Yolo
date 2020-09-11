@@ -1,7 +1,7 @@
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/7a96026f319ad31e28bc55458ee97e97.gif)
 
-* Yolo-Fastest： Faster and stronger https://github.com/dog-qiuqiu/Yolo-Fastest
-
+* ***Yolo-Fastest： Faster and stronger https://github.com/dog-qiuqiu/Yolo-Fastest***
+* ***此表中NCNN基准未更新最新ARM82数据，最新版本NCNN理论上ARM82会有一倍速度提升，待更新...***
 * 添加基于ncnn的106关键点 C sample:https://github.com/dog-qiuqiu/MobileNet-Yolo/tree/master/sample/ncnn
 ## ***Darknet Group convolution is not well supported on some GPUs such as NVIDIA PASCAL!!! 
 * https://github.com/AlexeyAB/darknet/issues/6091#issuecomment-651667469
