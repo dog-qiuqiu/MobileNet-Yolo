@@ -5,13 +5,13 @@ except:
     try:
         import caffe_pb2
     except:
-        print 'caffe_pb2.py not found. Try:'
-        print '  protoc caffe.proto --python_out=.'
+        print('caffe_pb2.py not found. Try:')
+        print('  protoc caffe.proto --python_out=.')
         exit()
 
 def parse_caffemodel(caffemodel):
     model = caffe_pb2.NetParameter()
-    print 'Loading caffemodel: ', caffemodel
+    print('Loading caffemodel: ', caffemodel)
     with open(caffemodel, 'rb') as fp:
         model.ParseFromString(fp.read())
 
@@ -149,26 +149,26 @@ def save_prototxt(net_info, protofile, region=True):
 
     def print_block(block_info, prefix, indent):
         blanks = ''.join([' ']*indent)
-        print >>fp, '%s%s {' % (blanks, prefix)
+        fp.write('%s%s {\n' % (blanks, prefix))
         for key,value in block_info.items():
             if type(value) == OrderedDict:
                 print_block(value, key, indent+4)
             elif type(value) == list:
                 for v in value:
-                    print >> fp, '%s    %s: %s' % (blanks, key, format_value(v))
+                    fp.write('%s    %s: %s\n' % (blanks, key, format_value(v)))
             else:
-                print >> fp, '%s    %s: %s' % (blanks, key, format_value(value))
-        print >> fp, '%s}' % blanks
+                fp.write('%s    %s: %s\n' % (blanks, key, format_value(value)))
+        fp.write('%s}\n' % blanks)
         
     props = net_info['props']
     layers = net_info['layers']
-    print >> fp, 'name: \"%s\"' % props['name']
-    print >> fp, 'input: \"%s\"' % props['input']
-    print >> fp, 'input_dim: %s' % props['input_dim'][0]
-    print >> fp, 'input_dim: %s' % props['input_dim'][1]
-    print >> fp, 'input_dim: %s' % props['input_dim'][2]
-    print >> fp, 'input_dim: %s' % props['input_dim'][3]
-    print >> fp, ''
+    fp.write('name: \"%s\"\n' % props['name'])
+    fp.write('input: \"%s\"\n' % props['input'])
+    fp.write('input_dim: %s\n' % props['input_dim'][0])
+    fp.write('input_dim: %s\n' % props['input_dim'][1])
+    fp.write('input_dim: %s\n' % props['input_dim'][2])
+    fp.write('input_dim: %s\n' % props['input_dim'][3])
+    fp.write('\n')
     for layer in layers:
         if layer['type'] != 'Region' or region == True:
             print_block(layer, 'layer', 0)

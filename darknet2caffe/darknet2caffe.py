@@ -42,7 +42,7 @@ def darknet2caffe(cfgfile, weightfile, protofile, caffemodel):
             continue
         elif block['type'] == 'convolutional':
             batch_normalize = int(block['batch_normalize'])
-            if block.has_key('name'):
+            if 'name' in block:
                 conv_layer_name = block['name']
                 bn_layer_name = '%s-bn' % block['name']
                 scale_layer_name = '%s-scale' % block['name']
@@ -57,7 +57,7 @@ def darknet2caffe(cfgfile, weightfile, protofile, caffemodel):
                 start = load_conv2caffe(buf, start, params[conv_layer_name])
             layer_id = layer_id+1
         elif block['type'] == 'connected':
-            if block.has_key('name'):
+            if 'name' in block:
                 fc_layer_name = block['name']
             else:
                 fc_layer_name = 'layer%d-fc' % layer_id
@@ -158,7 +158,7 @@ def cfg2prototxt(cfgfile):
         elif block['type'] == 'convolutional':
             conv_layer = OrderedDict()
             conv_layer['bottom'] = bottom
-            if block.has_key('name'):
+            if 'name' in block:
                 conv_layer['top'] = block['name']
                 conv_layer['name'] = block['name']
             else:
@@ -169,11 +169,11 @@ def cfg2prototxt(cfgfile):
             convolution_param['num_output'] = block ['filters']
             convolution_param['kernel_size'] = block['size']
 
-            if block.has_key('groups'):
+            if 'groups' in block:
                 convolution_param['group'] = block['groups']
-            if block.has_key('pad'):
+            if 'pad' in block:
                 if block['pad'] == '1':
-                    convolution_param['pad'] = str(int(convolution_param['kernel_size']) / 2)
+                    convolution_param['pad'] = str(int(convolution_param['kernel_size']) // 2)
             convolution_param['stride'] = block['stride']
             if block['batch_normalize'] == '1':
                 convolution_param['bias_term'] = 'false'
@@ -188,7 +188,7 @@ def cfg2prototxt(cfgfile):
                 bn_layer = OrderedDict()
                 bn_layer['bottom'] = bottom
                 bn_layer['top'] = bottom
-                if block.has_key('name'):
+                if 'name' in block:
                     bn_layer['name'] = '%s-bn' % block['name']
                 else:
                     bn_layer['name'] = 'layer%d-bn' % layer_id
@@ -202,7 +202,7 @@ def cfg2prototxt(cfgfile):
                 scale_layer = OrderedDict()
                 scale_layer['bottom'] = bottom
                 scale_layer['top'] = bottom
-                if block.has_key('name'):
+                if 'name' in block:
                     scale_layer['name'] = '%s-scale' % block['name']
                 else:
                     scale_layer['name'] = 'layer%d-scale' % layer_id
@@ -216,7 +216,7 @@ def cfg2prototxt(cfgfile):
                 relu_layer = OrderedDict()
                 relu_layer['bottom'] = bottom
                 relu_layer['top'] = bottom
-                if block.has_key('name'):
+                if 'name' in block:
                     relu_layer['name'] = '%s-act' % block['name']
                 else:
                     relu_layer['name'] = 'layer%d-act' % layer_id
@@ -237,7 +237,7 @@ def cfg2prototxt(cfgfile):
                         flatten_layer = OrderedDict()
                         flatten_layer['bottom'] = bottom
                         flatten_layer['top'] = 'layer%d-conv_flatten' % layer_id
-                        if block.has_key('name'):
+                        if 'name' in block:
                             flatten_layer['name'] = '%s-conv_flatten' % block['name']
                         else:
                             flatten_layer['name'] = 'layer%d-conv_flatten' % layer_id
@@ -259,7 +259,7 @@ def cfg2prototxt(cfgfile):
         elif block['type'] == 'maxpool':
             max_layer = OrderedDict()
             max_layer['bottom'] = bottom
-            if block.has_key('name'):
+            if 'name' in block:
                 max_layer['top'] = block['name']
                 max_layer['name'] = block['name']
             else:
@@ -270,10 +270,10 @@ def cfg2prototxt(cfgfile):
             pooling_param['kernel_size'] = block['size']
             pooling_param['stride'] = block['stride']
             pooling_param['pool'] = 'MAX'
-            if block.has_key('pad') and int(block['pad']) == 1:
+            if 'pad' in block and int(block['pad']) == 1:
                 pooling_param['pad'] = str((int(block['size'])-1)/2)
             else:
-		pooling_param['pad'] = str((int(block['size'])-1)/2)
+                pooling_param['pad'] = str((int(block['size'])-1)/2)
             max_layer['pooling_param'] = pooling_param
             layers.append(max_layer)
             bottom = max_layer['top']
@@ -283,7 +283,7 @@ def cfg2prototxt(cfgfile):
         elif block['type'] == 'avgpool':
             avg_layer = OrderedDict()
             avg_layer['bottom'] = bottom
-            if block.has_key('name'):
+            if 'name' in block:
                 avg_layer['top'] = block['name']
                 avg_layer['name'] = block['name']
             else:
@@ -306,7 +306,7 @@ def cfg2prototxt(cfgfile):
             if True:
                 region_layer = OrderedDict()
                 region_layer['bottom'] = bottom
-                if block.has_key('name'):
+                if 'name' in block:
                     region_layer['top'] = block['name']
                     region_layer['name'] = block['name']
                 else:
@@ -346,15 +346,15 @@ def cfg2prototxt(cfgfile):
             if(4 == bottom_layer_size):
                 prev_layer_id1 = layer_id + int(layer_name[0])
                 prev_layer_id2 = layer_id + int(layer_name[1])
-		prev_layer_id3 = layer_id + int(layer_name[2])
-		prev_layer_id4 = layer_id + int(layer_name[3])
+                prev_layer_id3 = layer_id + int(layer_name[2])
+                prev_layer_id4 = layer_id + int(layer_name[3])
                 print(topnames)
                 bottom1 = topnames[prev_layer_id1]
                 bottom2 = topnames[prev_layer_id2]
                 bottom3 = topnames[prev_layer_id3]
                 bottom4 = topnames[prev_layer_id4]
                 route_layer['bottom'] = [bottom1, bottom2,bottom3, bottom4]
-            if block.has_key('name'):
+            if 'name' in block:
                 route_layer['top'] = block['name']
                 route_layer['name'] = block['name']
             else:
@@ -372,7 +372,7 @@ def cfg2prototxt(cfgfile):
             upsample_layer = OrderedDict()
             print(block['stride'])
             upsample_layer['bottom'] = bottom
-            if block.has_key('name'):
+            if 'name' in block:
                 upsample_layer['top'] = block['name']
                 upsample_layer['name'] = block['name']
             else:
@@ -408,7 +408,7 @@ def cfg2prototxt(cfgfile):
                 scale_channels_layer = OrderedDict()
                 scale_channels_layer['bottom'] = [bottom1, bottom2]
 
-            if block.has_key('name'):
+            if 'name' in block:
                 scale_channels_layer['top'] = block['name']
                 scale_channels_layer['name'] = block['name']
             else:
@@ -431,7 +431,7 @@ def cfg2prototxt(cfgfile):
             bottom2= topnames[prev_layer_id2]
             shortcut_layer = OrderedDict()
             shortcut_layer['bottom'] = [bottom1, bottom2]
-            if block.has_key('name'):
+            if 'name' in block:
                 shortcut_layer['top'] = block['name']
                 shortcut_layer['name'] = block['name']
             else:
@@ -448,7 +448,7 @@ def cfg2prototxt(cfgfile):
                 relu_layer = OrderedDict()
                 relu_layer['bottom'] = bottom
                 relu_layer['top'] = bottom
-                if block.has_key('name'):
+                if 'name' in block:
                     relu_layer['name'] = '%s-act' % block['name']
                 else:
                     relu_layer['name'] = 'layer%d-act' % layer_id
@@ -464,7 +464,7 @@ def cfg2prototxt(cfgfile):
         elif block['type'] == 'connected':
             fc_layer = OrderedDict()
             fc_layer['bottom'] = bottom
-            if block.has_key('name'):
+            if 'name' in block:
                 fc_layer['top'] = block['name']
                 fc_layer['name'] = block['name']
             else:
@@ -481,7 +481,7 @@ def cfg2prototxt(cfgfile):
                 relu_layer = OrderedDict()
                 relu_layer['bottom'] = bottom
                 relu_layer['top'] = bottom
-                if block.has_key('name'):
+                if 'name' in block:
                     relu_layer['name'] = '%s-act' % block['name']
                 else:
                     relu_layer['name'] = 'layer%d-act' % layer_id
