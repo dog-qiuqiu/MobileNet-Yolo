@@ -1,3 +1,5 @@
+# 2021.2.6 此项目有不再更新，新项目地址: Yolo-Fastest： Faster and stronger https://github.com/dog-qiuqiu/Yolo-Fastest
+
 ![image](https://github.com/dog-qiuqiu/MobileNetv2-YOLOV3/blob/master/data/7a96026f319ad31e28bc55458ee97e97.gif)
 
 * ***Yolo-Fastest： Faster and stronger https://github.com/dog-qiuqiu/Yolo-Fastest***
